@@ -50,6 +50,7 @@
     ]
   },
   "devDependencies": {
+    "@semantic-release/npm": "^9.0.1",
     "@storybook/addon-actions": "^6.5.14",
     "@storybook/addon-essentials": "^6.5.14",
     "@storybook/addon-interactions": "^6.5.14",
@@ -63,8 +64,8 @@
     "babel-plugin-named-exports-order": "0.0.2",
     "chromatic": "^6.13.1",
     "prop-types": "^15.8.1",
-    "webpack": "^5.75.0",
-    "semantic-release": "^19.0.5"
+    "semantic-release": "^19.0.5",
+    "webpack": "^5.75.0"
   },
   "readme": "ERROR: No README data found!",
   "_id": "ui@0.1.0",
