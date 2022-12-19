@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import GithubCorner from '.';
+import GithubCorner from ".";
 
 export default {
-  title: 'Components/GithubCorner',
+  title: "Components/GithubCorner",
   component: GithubCorner,
 };
 
@@ -12,6 +12,6 @@ const Template = (args) => <GithubCorner {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-    url: 'https://calpa.me/',
-    target: '_blank',
-}
+  url: "https://calpa.me/",
+  target: "_blank",
+};
