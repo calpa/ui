@@ -1,50 +1,53 @@
 .github-corner {
-    fill: #151513;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    border: 0;
-    right: 0;
-    z-index: 1021;
+  fill: #151513;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+  z-index: 1021;
 }
 @keyframes octocat-wave {
-    0%, 100% {
-        transform: rotate(0);
-   }
-    20%, 60% {
-        transform: rotate(-25deg);
-   }
-    40%, 80% {
-        transform: rotate(10deg);
-   }
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
 }
 @keyframes fade-out {
-    0% {
-        opacity: 100%;
-   }
-    100% {
-        opacity: 0;
-        visibility: hidden;
-   }
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 .github-corner:hover {
-    color: white;
+  color: white;
 }
 .github-corner:hover .octo-arm {
-    animation: octocat-wave 560ms ease-in-out;
+  animation: octocat-wave 560ms ease-in-out;
 }
 .github-corner .octo-arm {
-    transform-origin: 130px 106px;
+  transform-origin: 130px 106px;
 }
 @media (max-width: 662px) {
-    .github-corner {
-        animation: fade-out 1560ms;
-        animation-fill-mode: forwards;
-   }
-    .github-corner .octo-arm {
-        animation: octocat-wave 560ms ease-in-out;
-   }
-    .github-corner:hover .octo-arm {
-        animation: none;
-   }
+  .github-corner {
+    animation: fade-out 1560ms;
+    animation-fill-mode: forwards;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
 }
