@@ -13,6 +13,16 @@ import PropTypes from "prop-types";
 function SignIn(props) {
   const { handleSubmit } = props;
 
+  function onSubmit(event) {
+    event.preventDefault();
+    handleSubmit(event);
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get("email"),
+      password: data.get("password"),
+    });
+  }
+
   return (
     <Box
       sx={{
@@ -28,7 +38,7 @@ function SignIn(props) {
       <Typography component="h1" variant="h5">
         Sign in
       </Typography>
-      <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+      <Box component="form" onSubmit={onSubmit} noValidate sx={{ mt: 1 }}>
         <TextField
           margin="normal"
           required
@@ -38,6 +48,11 @@ function SignIn(props) {
           name="email"
           autoComplete="email"
           autoFocus
+          inputProps={{
+            pattern: "[\\w-]+@[\\w-]+\\.[a-z]{2,}",
+            inputMode: "email",
+            "data-testid": "email",
+          }}
         />
         <TextField
           margin="normal"
@@ -48,6 +63,9 @@ function SignIn(props) {
           type="password"
           id="password"
           autoComplete="current-password"
+          inputProps={{
+            "data-testid": "password",
+          }}
         />
         <FormControlLabel
           control={<Checkbox value="remember" color="primary" />}
