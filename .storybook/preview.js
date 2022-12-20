@@ -1,15 +1,15 @@
 import { useMemo } from "react";
 
+import "@fontsource/material-icons";
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import "@fontsource/material-icons";
 
 // .storybook/preview.js
 
 import { CssBaseline, ThemeProvider } from "@mui/material";
-import { lightTheme, darkTheme } from "../src/themes";
+import { darkTheme, lightTheme } from "../src/themes";
 
 export const globalTypes = {
   theme: {

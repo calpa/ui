@@ -1,21 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import './index.css'
+import "./index.css";
 
 const Tag = ({ tag, children }) => (
-    <a href={`/tag/${tag}`} className="tag">
-        {tag}
-    </a>
+  <a href={`/tag/${tag}`} className="tag">
+    {tag}
+  </a>
 );
 
 Tag.propTypes = {
-    tag: PropTypes.string,
-    children: PropTypes.node,
+  tag: PropTypes.string,
+  children: PropTypes.node,
 };
 
 Tag.defaultProps = {
-    tag: '',
+  tag: "",
 };
 
 export default Tag;
