@@ -1,7 +1,7 @@
 import MuiTypography from "./MuiTypography";
 
 const components = {
-    MuiTypography
-}
+  MuiTypography,
+};
 
-export default components
+export default components;
