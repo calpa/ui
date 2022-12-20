@@ -1,62 +1,87 @@
-import { Grid, Typography } from '@mui/material';
+import { Grid, Link, List, ListItem, Typography } from '@mui/material';
 import React from 'react';
 
-// import ExternalLink from '../ExternalLink';
-// import { config } from '../../../data';
+import './index.css';
 
-// import './index.scss';
+const LinkColor = `info.dark`
 
 const ExternalLink = (props) => {
     return (
-        <a
+        <Link
             href={props.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="external-link"
+            color={LinkColor}
         >
             {props.children || props.title}
-        </a>
+        </Link>
     )
 }
 
 const Footer = (props) => {
-    const { title } = props;
+    const { categories, quickLinks } = props
+
     return (
-        <footer className="footer">
-            <Grid container sx={{
-                backgroundColor: `primary.light`
-            }}>
-                <Grid item xs={12} sx={{
-                    padding: `10px`
-                }}>
-                    <Typography className="architecture">
-                        Build with Love and Peace using&nbsp;
-                        <ExternalLink
-                            href="https://reactjs.org/"
-                            title={`React ${React.version}`}
-                        />
-                        .&nbsp;Hosted on&nbsp;
-                        <ExternalLink href="https://www.netlify.com/" title="Netlify" />
-                        <br />
-                        The components used in this website are open sourced and available in&nbsp;
-                        <ExternalLink
-                            href="https://github.com/calpa/ui"
-                            title="calpa/ui"
-                        />
-                    </Typography>
-                    <Typography className="copyright">
-                        Copyright&nbsp;
-                        <ExternalLink href="https://calpa.me/" title="&copy;Calpa" />.
-                        &nbsp;
-                        {title}
-                        &nbsp;
-                        {new Date().getFullYear()}
-                        &nbsp;Theme by <ExternalLink href="https://calpa.me/" title="Calpa Liu" />
+        <Grid container className="site-footer" sx={{
+            padding: `10px`,
+            backgroundColor: `#f0f0f0`
+        }}>
+            <Grid container>
+                <Grid item sm={12} md={6}>
+                    <Typography variant='h6'>About</Typography>
+                    <Typography textAlign="justify">
+                        {props.about}
                     </Typography>
                 </Grid>
+
+                <Grid item xs={6} md={3}>
+                    <Typography variant='h6'>Categories</Typography>
+                    <List sx={{
+                        margin: 0,
+                        padding: 0,
+                    }}>
+                        {categories.map((category, index) => (
+                            <ListItem key={index} sx={{
+                                padding: 0
+                            }}>
+                                <ExternalLink href={category.link}>
+                                    {category.title}
+                                </ExternalLink>
+                            </ListItem>
+                        ))}
+                    </List>
+                </Grid>
+
+                <Grid item xs={6} md={3}>
+                    <Typography variant='h6'>Quick Links</Typography>
+                    <List sx={{
+                        margin: 0,
+                        padding: 0,
+                    }}>
+                        {quickLinks.map((link, index) => (
+                            <ListItem key={index} sx={{
+                                padding: 0
+                            }}>
+                                <ExternalLink href={link.link}>
+                                    {link.title}
+                                </ExternalLink>
+                            </ListItem>
+                        ))}
+                    </List>
+                </Grid>
             </Grid>
-        </footer>
+
+            <Grid container>
+                <Grid container>
+                    <Grid item md={8} sm={6} xs={12}>
+                        <p class="copyright-text">Copyright &copy; {new Date().getFullYear()} All Rights Reserved by&nbsp;
+                            <Link href="#" color={LinkColor}>Calpa Liu</Link>.
+                        </p>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
     )
-};
+}
 
 export default Footer;
