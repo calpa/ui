@@ -83,7 +83,7 @@ const Footer = (props) => {
       <Grid container>
         <Grid container>
           <Grid item md={8} sm={6} xs={12}>
-            <p class="copyright-text">
+            <p className="copyright-text">
               Copyright &copy; {new Date().getFullYear()} All Rights Reserved
               by&nbsp;
               <Link href="#" color={LinkColor}>

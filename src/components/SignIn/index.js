@@ -17,10 +17,7 @@ function SignIn(props) {
     event.preventDefault();
     handleSubmit(event);
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
-    });
+    
   }
 
   return (
@@ -47,7 +44,7 @@ function SignIn(props) {
           label="Email Address"
           name="email"
           autoComplete="email"
-          autoFocus
+          
           inputProps={{
             pattern: "[\\w-]+@[\\w-]+\\.[a-z]{2,}",
             inputMode: "email",
