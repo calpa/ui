@@ -7,6 +7,11 @@ export const lightTheme = createTheme({
   components,
   palette: {
     mode: "light",
+    blue: {
+      light: "#337ab7",
+      main: "#0056b3",
+      dark: "#0f457f",
+    },
     primary: {
       main: `#81C7D4`,
     },
