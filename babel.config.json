@@ -15,5 +15,5 @@
     ],
     "@babel/preset-react"
   ],
-  "ignore": ["**/*.stories.js"]
+  "ignore": ["**/*.stories.js", "**/*.stories.jsx"]
 }
