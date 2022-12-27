@@ -1,5 +1,7 @@
 import Blockquote from "./Blockquote";
 import Button from "./Button";
+import Card from "./Card";
+import Date from "./Date";
 import Footer from "./Footer";
 import GithubCorners from "./GithubCorners";
 import NavBar from "./NavBar";
@@ -14,4 +16,6 @@ export default {
   NavBar,
   SignIn,
   Tag,
+  Card,
+  Date,
 };
