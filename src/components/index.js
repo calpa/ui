@@ -3,7 +3,7 @@ import Button from "./Button";
 import Card from "./Card";
 import Date from "./Date";
 import Footer from "./Footer";
-import GithubCorners from "./GithubCorners";
+import GithubCorner from "./GithubCorner";
 import NavBar from "./NavBar";
 import SignIn from "./SignIn";
 import Tag from "./Tag";
@@ -12,7 +12,7 @@ export default {
   Blockquote,
   Button,
   Footer,
-  GithubCorners,
+  GithubCorner,
   NavBar,
   SignIn,
   Tag,
