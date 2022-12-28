@@ -4,8 +4,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
 const Blockquote = props => {
-  return /*#__PURE__*/React.createElement("blockquote", {
+  return /*#__PURE__*/(0, _jsxRuntime.jsx)("blockquote", {
     style: {
       maxWidth: "100%",
       width: "100%",
@@ -15,8 +16,9 @@ const Blockquote = props => {
       margin: "0",
       paddingLeft: "0.9em",
       paddingRight: "0.9em"
-    }
-  }, props.children);
+    },
+    children: props.children
+  });
 };
 var _default = Blockquote;
 exports.default = _default;
