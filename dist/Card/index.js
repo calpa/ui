@@ -19,7 +19,8 @@ function CustomCard(props) {
     description,
     date,
     moreText,
-    tags
+    tags,
+    Link
   } = props;
   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Card, {
     sx: {
@@ -55,6 +56,7 @@ function CustomCard(props) {
           xs: 12,
           children: (0, _lodash.map)(tags, (tag, index) => /*#__PURE__*/(0, _jsxRuntime.jsx)(_Tag.default, {
             tag: tag,
+            Link: Link,
             children: tag
           }, tag))
         }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
