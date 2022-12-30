@@ -7,6 +7,7 @@ exports.default = void 0;
 require("core-js/modules/es.symbol.description.js");
 var _material = require("@mui/material");
 var _propTypes = _interopRequireDefault(require("prop-types"));
+var _lodash = require("lodash");
 var _Date = _interopRequireDefault(require("../Date"));
 var _Tag = _interopRequireDefault(require("../Tag"));
 var _jsxRuntime = require("react/jsx-runtime");
@@ -52,7 +53,7 @@ function CustomCard(props) {
           container: true,
           item: true,
           xs: 12,
-          children: tags.map((tag, index) => /*#__PURE__*/(0, _jsxRuntime.jsx)(_Tag.default, {
+          children: (0, _lodash.map)(tags, (tag, index) => /*#__PURE__*/(0, _jsxRuntime.jsx)(_Tag.default, {
             tag: tag,
             children: tag
           }, tag))
