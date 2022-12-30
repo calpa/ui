@@ -8,9 +8,10 @@ import {
 import PropTypes from "prop-types";
 
 import Date from "../Date";
+import Tag from "../Tag";
 
 function CustomCard(props) {
-  const { onClick, title, description, date, moreText } = props;
+  const { onClick, title, description, date, moreText, tags } = props;
   return (
     <Card
       sx={{
@@ -39,7 +40,14 @@ function CustomCard(props) {
             <Date date={date} />
           </Grid>
           <Typography>{description}</Typography>
-          <Typography color="primary">{moreText}</Typography>
+          <Grid container item xs={12}>
+            {tags.map((tag, index) => (
+              <Tag tag={tag} key={tag}>
+                {tag}
+              </Tag>
+            ))}
+          </Grid>
+          <Typography color="blue.main">{moreText}</Typography>
         </CardContent>
       </CardActionArea>
     </Card>
@@ -50,6 +58,7 @@ export default CustomCard;
 
 CustomCard.defaultProps = {
   moreText: "Read More",
+  tags: [],
 };
 
 CustomCard.propTypes = {
@@ -58,4 +67,5 @@ CustomCard.propTypes = {
   description: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   moreText: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
