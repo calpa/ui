@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import PropTypes from "prop-types";
-
+import { map } from "lodash";
 import Date from "../Date";
 import Tag from "../Tag";
 
@@ -41,7 +41,7 @@ function CustomCard(props) {
           </Grid>
           <Typography>{description}</Typography>
           <Grid container item xs={12}>
-            {tags.map((tag, index) => (
+            {map(tags, (tag, index) => (
               <Tag tag={tag} key={tag}>
                 {tag}
               </Tag>
