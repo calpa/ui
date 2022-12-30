@@ -20,16 +20,22 @@ function CustomCard(props) {
     >
       <CardActionArea>
         <CardContent>
-          <Grid container alignItems="center" justifyContent="space-between">
-            <Typography
-              variant="h1"
-              fullWidth
-              sx={{
-                textDecoration: "none",
-              }}
-            >
-              {title}
-            </Typography>
+          <Grid
+            container
+            alignItems="flex-start"
+            justifyContent="space-between"
+          >
+            <Grid item xs={6} sm={10}>
+              <Typography
+                variant="h1"
+                sx={{
+                  textDecoration: "none",
+                  textAlign: "justify",
+                }}
+              >
+                {title}
+              </Typography>
+            </Grid>
             <Date date={date} />
           </Grid>
           <Typography>{description}</Typography>

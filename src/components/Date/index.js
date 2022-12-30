@@ -7,8 +7,9 @@ function Date(props) {
       sx={{
         backgroundColor: "blue.main",
         color: "#fff",
-        padding: "0.8em",
-        marginRight: "10px",
+        padding: "10px",
+        width: "110px",
+        textAlign: "center",
       }}
     >
       {date}
