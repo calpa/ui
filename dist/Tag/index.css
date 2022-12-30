@@ -35,6 +35,7 @@
 }
 .tag:hover {
   background: #e4e4e4;
+  color: black;
 }
 .tag:hover:before {
   border-color: transparent #e4e4e4 transparent transparent;

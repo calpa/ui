@@ -8,6 +8,7 @@ require("core-js/modules/es.symbol.description.js");
 var _material = require("@mui/material");
 var _propTypes = _interopRequireDefault(require("prop-types"));
 var _Date = _interopRequireDefault(require("../Date"));
+var _Tag = _interopRequireDefault(require("../Tag"));
 var _jsxRuntime = require("react/jsx-runtime");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function CustomCard(props) {
@@ -16,7 +17,8 @@ function CustomCard(props) {
     title,
     description,
     date,
-    moreText
+    moreText,
+    tags
   } = props;
   return /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Card, {
     sx: {
@@ -27,22 +29,35 @@ function CustomCard(props) {
       children: /*#__PURE__*/(0, _jsxRuntime.jsxs)(_material.CardContent, {
         children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)(_material.Grid, {
           container: true,
-          alignItems: "center",
+          alignItems: "flex-start",
           justifyContent: "space-between",
-          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
-            variant: "h1",
-            fullWidth: true,
-            sx: {
-              textDecoration: "none"
-            },
-            children: title
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Grid, {
+            item: true,
+            xs: 6,
+            sm: 10,
+            children: /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
+              variant: "h1",
+              sx: {
+                textDecoration: "none",
+                textAlign: "justify"
+              },
+              children: title
+            })
           }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_Date.default, {
             date: date
           })]
         }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
           children: description
+        }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Grid, {
+          container: true,
+          item: true,
+          xs: 12,
+          children: tags.map((tag, index) => /*#__PURE__*/(0, _jsxRuntime.jsx)(_Tag.default, {
+            tag: tag,
+            children: tag
+          }, tag))
         }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_material.Typography, {
-          color: "primary",
+          color: "blue.main",
           children: moreText
         })]
       })
@@ -52,12 +67,14 @@ function CustomCard(props) {
 var _default = CustomCard;
 exports.default = _default;
 CustomCard.defaultProps = {
-  moreText: "Read More"
+  moreText: "Read More",
+  tags: []
 };
 CustomCard.propTypes = {
   onClick: _propTypes.default.func.isRequired,
   title: _propTypes.default.string.isRequired,
   description: _propTypes.default.string.isRequired,
   date: _propTypes.default.string.isRequired,
-  moreText: _propTypes.default.string
+  moreText: _propTypes.default.string,
+  tags: _propTypes.default.arrayOf(_propTypes.default.string).isRequired
 };
