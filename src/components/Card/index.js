@@ -11,7 +11,7 @@ import Date from "../Date";
 import Tag from "../Tag";
 
 function CustomCard(props) {
-  const { onClick, title, description, date, moreText, tags } = props;
+  const { onClick, title, description, date, moreText, tags, Link } = props;
   return (
     <Card
       sx={{
@@ -42,7 +42,7 @@ function CustomCard(props) {
           <Typography>{description}</Typography>
           <Grid container item xs={12}>
             {map(tags, (tag, index) => (
-              <Tag tag={tag} key={tag}>
+              <Tag tag={tag} key={tag} Link={Link}>
                 {tag}
               </Tag>
             ))}
