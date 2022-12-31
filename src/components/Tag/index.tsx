@@ -1,13 +1,9 @@
 import "./index.css";
 import { FC } from "react";
 
-type Props = {
-  tag: string;
-  children?: React.ReactNode;
-  Link?: React.ElementType;
-};
+import { TagProps } from "./tag";
 
-const Tag: FC<Props> = ({ tag, children, Link = "a" }) => {
+const Tag: FC<TagProps> = ({ tag, Link = "a" }) => {
   // Check if the Link prop is an "a" tag
   const isAnchor = Link === "a"; // Will be true if Link is an "a" tag
 
