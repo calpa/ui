@@ -1,14 +1,13 @@
 require("./index.css");
 var $kRA3g$reactjsxruntime = require("react/jsx-runtime");
+var $kRA3g$react = require("react");
 var $kRA3g$swchelperslib_object_spreadjs = require("@swc/helpers/lib/_object_spread.js");
 var $kRA3g$muimaterial = require("@mui/material");
 var $kRA3g$lodash = require("lodash");
 var $kRA3g$swchelperslib_define_propertyjs = require("@swc/helpers/lib/_define_property.js");
 var $kRA3g$swchelperslib_object_spread_propsjs = require("@swc/helpers/lib/_object_spread_props.js");
-var $kRA3g$proptypes = require("prop-types");
 var $kRA3g$swchelperslib_sliced_to_arrayjs = require("@swc/helpers/lib/_sliced_to_array.js");
 var $kRA3g$muiiconsmaterialMenu = require("@mui/icons-material/Menu");
-var $kRA3g$react = require("react");
 var $kRA3g$muiiconsmaterialLockOutlined = require("@mui/icons-material/LockOutlined");
 var $kRA3g$muimaterialAvatar = require("@mui/material/Avatar");
 var $kRA3g$muimaterialBox = require("@mui/material/Box");
@@ -36,6 +35,7 @@ $parcel$export(module.exports, "GithubCorner", function () { return $91fb128693f
 $parcel$export(module.exports, "NavBar", function () { return $ed57b44d1f79d01b$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "SignIn", function () { return $af05c24c81a9cc23$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "Tag", function () { return $29cb95a2a78028d8$export$2e2bcd8739ae039; });
+
 
 var $dc5d809e961b599a$var$Blockquote = function(props) {
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("blockquote", {
@@ -74,7 +74,7 @@ var $d9fd4d1486bbea23$export$2e2bcd8739ae039 = $d9fd4d1486bbea23$var$CustomButto
 
 
 
-function $5f2b0527349d74dd$var$Date(props) {
+var $5f2b0527349d74dd$var$Date = function(props) {
     var date = props.date;
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
         sx: {
@@ -86,7 +86,7 @@ function $5f2b0527349d74dd$var$Date(props) {
         },
         children: date
     });
-}
+};
 var $5f2b0527349d74dd$export$2e2bcd8739ae039 = $5f2b0527349d74dd$var$Date;
 
 
@@ -152,7 +152,7 @@ var $9d11b387092b23df$var$CustomCard = function(param) {
                         container: true,
                         item: true,
                         xs: 12,
-                        children: (0, $kRA3g$lodash.map)(tags, function(tag, index) {
+                        children: (0, $kRA3g$lodash.map)(tags, function(tag) {
                             return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $29cb95a2a78028d8$export$2e2bcd8739ae039), {
                                 tag: tag,
                                 Link: Link,
@@ -343,10 +343,6 @@ var $91fb128693f0a15d$var$GithubCorner = function(param) {
     });
 };
 var $91fb128693f0a15d$export$2e2bcd8739ae039 = $91fb128693f0a15d$var$GithubCorner;
-$91fb128693f0a15d$var$GithubCorner.propTypes = {
-    url: (0, ($parcel$interopDefault($kRA3g$proptypes))).string.isRequired,
-    target: (0, ($parcel$interopDefault($kRA3g$proptypes))).string
-};
 
 
 
@@ -356,8 +352,8 @@ $91fb128693f0a15d$var$GithubCorner.propTypes = {
 
 function $ed57b44d1f79d01b$var$NavBar(props) {
     var pages = props.pages, avatarAlt = props.avatarAlt, avatarImage = props.avatarImage, title = props.title;
-    var _React_useState = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))($kRA3g$react.useState(null), 2), anchorElNav = _React_useState[0], setAnchorElNav = _React_useState[1];
-    var _React_useState1 = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))($kRA3g$react.useState(null), 2), anchorElUser = _React_useState1[0], setAnchorElUser = _React_useState1[1];
+    var _useState = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))((0, $kRA3g$react.useState)(null), 2), anchorElNav = _useState[0], setAnchorElNav = _useState[1];
+    var _useState1 = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))((0, $kRA3g$react.useState)(null), 2), anchorElUser = _useState1[0], setAnchorElUser = _useState1[1];
     var handleOpenNavMenu = function(event) {
         setAnchorElNav(event.currentTarget);
     };
@@ -517,13 +513,17 @@ var $ed57b44d1f79d01b$export$2e2bcd8739ae039 = $ed57b44d1f79d01b$var$NavBar;
 
 
 
-function $af05c24c81a9cc23$var$SignIn(props) {
+
+function $af05c24c81a9cc23$var$SignIn(param) {
+    var handleSubmit = param.handleSubmit;
     var onSubmit = function onSubmit(event) {
         event.preventDefault();
         handleSubmit(event);
         var data = new FormData(event.currentTarget);
     };
-    var handleSubmit = props.handleSubmit;
+    var _useState = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))((0, $kRA3g$react.useState)(""), 2), email = _useState[0], setEmail = _useState[1];
+    var _useState1 = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))((0, $kRA3g$react.useState)(""), 2), password = _useState1[0], setPassword = _useState1[1];
+    var _useState2 = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))((0, $kRA3g$react.useState)(false), 2), remember = _useState2[0], setRemember = _useState2[1];
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)((0, ($parcel$interopDefault($kRA3g$muimaterialBox))), {
         sx: {
             marginTop: 8,
@@ -624,12 +624,6 @@ function $af05c24c81a9cc23$var$SignIn(props) {
     });
 }
 var $af05c24c81a9cc23$export$2e2bcd8739ae039 = $af05c24c81a9cc23$var$SignIn;
-$af05c24c81a9cc23$var$SignIn.propTypes = {
-    handleSubmit: (0, ($parcel$interopDefault($kRA3g$proptypes))).func
-};
-$af05c24c81a9cc23$var$SignIn.defaultProps = {
-    handleSubmit: function() {}
-};
 
 
 

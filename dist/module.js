@@ -1,10 +1,9 @@
 import "./index.css";
 import {jsx as $4dtzN$jsx, jsxs as $4dtzN$jsxs} from "react/jsx-runtime";
+import {useState as $4dtzN$useState} from "react";
 import {Button as $4dtzN$Button, Card as $4dtzN$Card, CardActionArea as $4dtzN$CardActionArea, CardContent as $4dtzN$CardContent, Grid as $4dtzN$Grid, Typography as $4dtzN$Typography, Link as $4dtzN$Link, List as $4dtzN$List, ListItem as $4dtzN$ListItem, AppBar as $4dtzN$AppBar, Container as $4dtzN$Container, Toolbar as $4dtzN$Toolbar, Box as $4dtzN$Box, IconButton as $4dtzN$IconButton, Menu as $4dtzN$Menu, MenuItem as $4dtzN$MenuItem, Tooltip as $4dtzN$Tooltip, Avatar as $4dtzN$Avatar} from "@mui/material";
 import {map as $4dtzN$map} from "lodash";
-import $4dtzN$proptypes from "prop-types";
 import $4dtzN$muiiconsmaterialMenu from "@mui/icons-material/Menu";
-import {useState as $4dtzN$useState} from "react";
 import $4dtzN$muiiconsmaterialLockOutlined from "@mui/icons-material/LockOutlined";
 import $4dtzN$muimaterialAvatar from "@mui/material/Avatar";
 import $4dtzN$muimaterialBox from "@mui/material/Box";
@@ -15,6 +14,7 @@ import $4dtzN$muimaterialGrid from "@mui/material/Grid";
 import $4dtzN$muimaterialLink from "@mui/material/Link";
 import $4dtzN$muimaterialTextField from "@mui/material/TextField";
 import $4dtzN$muimaterialTypography from "@mui/material/Typography";
+
 
 
 const $3c428f9ab394f367$var$Blockquote = (props)=>{
@@ -55,7 +55,7 @@ var $5239fd20ec9f31f3$export$2e2bcd8739ae039 = $5239fd20ec9f31f3$var$CustomButto
 
 
 
-function $59a70b0d3de6e811$var$Date(props) {
+const $59a70b0d3de6e811$var$Date = (props)=>{
     const { date: date  } = props;
     return /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
         sx: {
@@ -67,7 +67,7 @@ function $59a70b0d3de6e811$var$Date(props) {
         },
         children: date
     });
-}
+};
 var $59a70b0d3de6e811$export$2e2bcd8739ae039 = $59a70b0d3de6e811$var$Date;
 
 
@@ -131,7 +131,7 @@ const $616c692299a75f89$var$CustomCard = ({ onClick: onClick , title: title , de
                         container: true,
                         item: true,
                         xs: 12,
-                        children: (0, $4dtzN$map)(tags, (tag, index)=>/*#__PURE__*/ (0, $4dtzN$jsx)((0, $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039), {
+                        children: (0, $4dtzN$map)(tags, (tag)=>/*#__PURE__*/ (0, $4dtzN$jsx)((0, $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039), {
                                 tag: tag,
                                 Link: Link,
                                 children: tag
@@ -313,10 +313,6 @@ const $c7932d61ef8b8d14$var$GithubCorner = ({ url: url , target: target  })=>/*#
         })
     });
 var $c7932d61ef8b8d14$export$2e2bcd8739ae039 = $c7932d61ef8b8d14$var$GithubCorner;
-$c7932d61ef8b8d14$var$GithubCorner.propTypes = {
-    url: (0, $4dtzN$proptypes).string.isRequired,
-    target: (0, $4dtzN$proptypes).string
-};
 
 
 
@@ -325,8 +321,8 @@ $c7932d61ef8b8d14$var$GithubCorner.propTypes = {
 
 function $4df044613c4d8e22$var$NavBar(props) {
     const { pages: pages , avatarAlt: avatarAlt , avatarImage: avatarImage , title: title  } = props;
-    const [anchorElNav, setAnchorElNav] = $4dtzN$useState(null);
-    const [anchorElUser, setAnchorElUser] = $4dtzN$useState(null);
+    const [anchorElNav, setAnchorElNav] = (0, $4dtzN$useState)(null);
+    const [anchorElUser, setAnchorElUser] = (0, $4dtzN$useState)(null);
     const handleOpenNavMenu = (event)=>{
         setAnchorElNav(event.currentTarget);
     };
@@ -482,8 +478,10 @@ var $4df044613c4d8e22$export$2e2bcd8739ae039 = $4df044613c4d8e22$var$NavBar;
 
 
 
-function $491d5f8cba17e554$var$SignIn(props) {
-    const { handleSubmit: handleSubmit  } = props;
+function $491d5f8cba17e554$var$SignIn({ handleSubmit: handleSubmit  }) {
+    const [email, setEmail] = (0, $4dtzN$useState)("");
+    const [password, setPassword] = (0, $4dtzN$useState)("");
+    const [remember, setRemember] = (0, $4dtzN$useState)(false);
     function onSubmit(event) {
         event.preventDefault();
         handleSubmit(event);
@@ -589,12 +587,6 @@ function $491d5f8cba17e554$var$SignIn(props) {
     });
 }
 var $491d5f8cba17e554$export$2e2bcd8739ae039 = $491d5f8cba17e554$var$SignIn;
-$491d5f8cba17e554$var$SignIn.propTypes = {
-    handleSubmit: (0, $4dtzN$proptypes).func
-};
-$491d5f8cba17e554$var$SignIn.defaultProps = {
-    handleSubmit: ()=>{}
-};
 
 
 
