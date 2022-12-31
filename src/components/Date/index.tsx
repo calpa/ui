@@ -1,6 +1,11 @@
 import { Typography } from "@mui/material";
+import { FC } from "react";
 
-function Date(props) {
+type DateProps = {
+  date: string;
+};
+
+const Date: FC<DateProps> = (props) => {
   const { date } = props;
   return (
     <Typography
@@ -15,6 +20,6 @@ function Date(props) {
       {date}
     </Typography>
   );
-}
+};
 
 export default Date;

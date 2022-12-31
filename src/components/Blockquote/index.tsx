@@ -1,4 +1,10 @@
-const Blockquote = (props) => {
+import React, { FC } from "react";
+
+type BlockquoteProps = {
+  children: React.ReactNode;
+};
+
+const Blockquote: FC<BlockquoteProps> = (props) => {
   return (
     <blockquote
       style={{

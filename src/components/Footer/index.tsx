@@ -4,7 +4,19 @@ import "./index.css";
 
 const LinkColor = `info.dark`;
 
-const ExternalLink = (props) => {
+interface ExternalLinkProps {
+  href: string;
+  title?: string;
+  children?: React.ReactNode;
+}
+
+interface FooterProps {
+  categories: { title: string; link: string }[];
+  quickLinks: { title: string; link: string }[];
+  about: string;
+}
+
+const ExternalLink: React.FC<ExternalLinkProps> = (props) => {
   return (
     <Link
       href={props.href}
@@ -17,7 +29,7 @@ const ExternalLink = (props) => {
   );
 };
 
-const Footer = (props) => {
+const Footer: React.FC<FooterProps> = (props) => {
   const { categories, quickLinks } = props;
 
   return (

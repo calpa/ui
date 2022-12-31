@@ -8,12 +8,18 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import PropTypes from "prop-types";
+import { FormEvent, ReactElement, useState } from "react";
 
-function SignIn(props) {
-  const { handleSubmit } = props;
+interface SignInProps {
+  handleSubmit: (event: FormEvent<HTMLFormElement>) => void;
+}
 
-  function onSubmit(event) {
+function SignIn({ handleSubmit }: SignInProps): ReactElement {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [remember, setRemember] = useState(false);
+
+  function onSubmit(event: FormEvent<HTMLFormElement>): void {
     event.preventDefault();
     handleSubmit(event);
     const data = new FormData(event.currentTarget);
@@ -92,11 +98,3 @@ function SignIn(props) {
 }
 
 export default SignIn;
-
-SignIn.propTypes = {
-  handleSubmit: PropTypes.func,
-};
-
-SignIn.defaultProps = {
-  handleSubmit: () => {},
-};

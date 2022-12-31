@@ -1,7 +1,11 @@
-import PropTypes from "prop-types";
+import React from "react";
 import "./index.css";
+interface GithubCornerProps {
+  url: string;
+  target?: string;
+}
 
-const GithubCorner = ({ url, target }) => (
+const GithubCorner: React.FC<GithubCornerProps> = ({ url, target }) => (
   <a
     href={url}
     className="github-corner"
@@ -31,8 +35,3 @@ const GithubCorner = ({ url, target }) => (
 );
 
 export default GithubCorner;
-
-GithubCorner.propTypes = {
-  url: PropTypes.string.isRequired,
-  target: PropTypes.string,
-};

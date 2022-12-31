@@ -49,7 +49,7 @@ const CustomCard: FC<CustomCardProps> = ({
           </Grid>
           <Typography>{description}</Typography>
           <Grid container item xs={12}>
-            {map(tags, (tag, index) => (
+            {map(tags, (tag) => (
               <Tag tag={tag} key={tag} Link={Link}>
                 {tag}
               </Tag>

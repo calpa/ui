@@ -1,3 +1,4 @@
+import { useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
@@ -12,15 +13,21 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import * as React from "react";
 
-function NavBar(props) {
+type NavBarProps = {
+  pages: string[];
+  avatarAlt: string;
+  avatarImage: string;
+  title: string;
+};
+
+function NavBar(props: NavBarProps) {
   const { pages, avatarAlt, avatarImage, title } = props;
 
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const handleOpenNavMenu = (event) => {
+  const handleOpenNavMenu = (event: any) => {
     setAnchorElNav(event.currentTarget);
   };
 
