@@ -1,8 +1,13 @@
-import PropTypes from "prop-types";
-
 import "./index.css";
+import { FC } from "react";
 
-const Tag = ({ tag, children, Link = "a" }) => {
+type Props = {
+  tag: string;
+  children?: React.ReactNode;
+  Link?: React.ElementType;
+};
+
+const Tag: FC<Props> = ({ tag, children, Link = "a" }) => {
   // Check if the Link prop is an "a" tag
   const isAnchor = Link === "a"; // Will be true if Link is an "a" tag
 
@@ -13,12 +18,6 @@ const Tag = ({ tag, children, Link = "a" }) => {
   };
 
   return <Link {...linkProps}>{tag}</Link>;
-};
-
-Tag.propTypes = {
-  tag: PropTypes.string,
-  children: PropTypes.node,
-  Link: PropTypes.elementType, // This specifies that the Link prop is a component
 };
 
 Tag.defaultProps = {

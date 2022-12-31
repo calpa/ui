@@ -1,3 +1,4 @@
+import { FC } from "react";
 import {
   Card,
   CardActionArea,
@@ -5,13 +6,20 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
-import PropTypes from "prop-types";
 import { map } from "lodash";
 import Date from "../Date";
 import Tag from "../Tag";
+import { CustomCardProps } from "./card";
 
-function CustomCard(props) {
-  const { onClick, title, description, date, moreText, tags, Link } = props;
+const CustomCard: FC<CustomCardProps> = ({
+  onClick,
+  title,
+  description,
+  date,
+  moreText,
+  tags,
+  Link,
+}) => {
   return (
     <Card
       sx={{
@@ -52,20 +60,11 @@ function CustomCard(props) {
       </CardActionArea>
     </Card>
   );
-}
-
-export default CustomCard;
+};
 
 CustomCard.defaultProps = {
   moreText: "Read More",
   tags: [],
 };
 
-CustomCard.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  moreText: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+export default CustomCard;
