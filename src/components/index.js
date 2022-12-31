@@ -1,21 +1,9 @@
-import Blockquote from "./Blockquote";
-import Button from "./Button";
-import Card from "./Card";
-import Date from "./Date";
-import Footer from "./Footer";
-import GithubCorner from "./GithubCorner";
-import NavBar from "./NavBar";
-import SignIn from "./SignIn";
-import Tag from "./Tag";
-
-export default {
-  Blockquote,
-  Button,
-  Footer,
-  GithubCorner,
-  NavBar,
-  SignIn,
-  Tag,
-  Card,
-  Date,
-};
+export { default as Blockquote } from "./Blockquote";
+export { default as Button } from "./Button";
+export { default as Card } from "./Card";
+export { default as Date } from "./Date";
+export { default as Footer } from "./Footer";
+export { default as GithubCorner } from "./GithubCorner";
+export { default as NavBar } from "./NavBar";
+export { default as SignIn } from "./SignIn";
+export { default as Tag } from "./Tag";
