@@ -351,18 +351,28 @@ var $91fb128693f0a15d$export$2e2bcd8739ae039 = $91fb128693f0a15d$var$GithubCorne
 
 
 
+var $ed57b44d1f79d01b$var$Color;
+(function(Color) {
+    Color["Default"] = "default";
+    Color["Inherit"] = "inherit";
+    Color["Primary"] = "primary";
+    Color["Secondary"] = "secondary";
+    Color["Transparent"] = "transparent";
+})($ed57b44d1f79d01b$var$Color || ($ed57b44d1f79d01b$var$Color = {}));
+function $ed57b44d1f79d01b$var$noop() {}
 function $ed57b44d1f79d01b$var$NavBar(props) {
-    var pages = props.pages, avatarAlt = props.avatarAlt, avatarImage = props.avatarImage, title = props.title;
+    var navItemColor = props.navItemColor, pages = props.pages, avatarAlt = props.avatarAlt, avatarImage = props.avatarImage, title = props.title, _props_color = props.color, color = _props_color === void 0 ? $ed57b44d1f79d01b$var$Color.Default : _props_color, _props_onClick = props.onClick, onClick = _props_onClick === void 0 ? $ed57b44d1f79d01b$var$noop : _props_onClick, _props_handleTitleClick = props.handleTitleClick, handleTitleClick = _props_handleTitleClick === void 0 ? $ed57b44d1f79d01b$var$noop : _props_handleTitleClick;
     var _useState = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))((0, $kRA3g$react.useState)(null), 2), anchorElNav = _useState[0], setAnchorElNav = _useState[1];
-    var _useState1 = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))((0, $kRA3g$react.useState)(null), 2), anchorElUser = _useState1[0], setAnchorElUser = _useState1[1];
     var handleOpenNavMenu = function(event) {
         setAnchorElNav(event.currentTarget);
     };
-    var handleCloseNavMenu = function() {
+    var handleNavItemClick = function(event) {
         setAnchorElNav(null);
+        onClick && onClick(event);
     };
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.AppBar), {
         position: "static",
+        color: color,
         children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Container), {
             maxWidth: "xl",
             children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)((0, $kRA3g$muimaterial.Toolbar), {
@@ -372,7 +382,7 @@ function $ed57b44d1f79d01b$var$NavBar(props) {
                         variant: "h6",
                         noWrap: true,
                         component: "a",
-                        href: "/",
+                        onClick: handleTitleClick,
                         sx: {
                             mr: 2,
                             display: {
@@ -383,7 +393,8 @@ function $ed57b44d1f79d01b$var$NavBar(props) {
                             fontWeight: 700,
                             letterSpacing: ".3rem",
                             color: "inherit",
-                            textDecoration: "none"
+                            textDecoration: "none",
+                            cursor: "pointer"
                         },
                         children: title
                     }),
@@ -418,7 +429,7 @@ function $ed57b44d1f79d01b$var$NavBar(props) {
                                     horizontal: "left"
                                 },
                                 open: Boolean(anchorElNav),
-                                onClose: handleCloseNavMenu,
+                                onClose: handleNavItemClick,
                                 sx: {
                                     display: {
                                         xs: "block",
@@ -427,7 +438,7 @@ function $ed57b44d1f79d01b$var$NavBar(props) {
                                 },
                                 children: pages.map(function(page) {
                                     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.MenuItem), {
-                                        onClick: handleCloseNavMenu,
+                                        onClick: handleNavItemClick,
                                         children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
                                             textAlign: "center",
                                             children: page
@@ -449,7 +460,7 @@ function $ed57b44d1f79d01b$var$NavBar(props) {
                                 md: "none"
                             },
                             flexGrow: 1,
-                            fontFamily: "monospace",
+                            // fontFamily: "monospace",
                             fontWeight: 700,
                             letterSpacing: ".3rem",
                             color: "inherit",
@@ -467,11 +478,12 @@ function $ed57b44d1f79d01b$var$NavBar(props) {
                         },
                         children: pages.map(function(page) {
                             return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Button), {
-                                onClick: handleCloseNavMenu,
+                                onClick: handleNavItemClick,
                                 sx: {
-                                    color: "white",
+                                    color: navItemColor,
                                     display: "block"
                                 },
+                                id: "blog-nav-item-".concat(page),
                                 children: page
                             }, page);
                         })

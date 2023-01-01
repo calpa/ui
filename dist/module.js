@@ -320,18 +320,28 @@ var $c7932d61ef8b8d14$export$2e2bcd8739ae039 = $c7932d61ef8b8d14$var$GithubCorne
 
 
 
+let $4df044613c4d8e22$var$Color;
+(function(Color) {
+    Color["Default"] = "default";
+    Color["Inherit"] = "inherit";
+    Color["Primary"] = "primary";
+    Color["Secondary"] = "secondary";
+    Color["Transparent"] = "transparent";
+})($4df044613c4d8e22$var$Color || ($4df044613c4d8e22$var$Color = {}));
+function $4df044613c4d8e22$var$noop() {}
 function $4df044613c4d8e22$var$NavBar(props) {
-    const { pages: pages , avatarAlt: avatarAlt , avatarImage: avatarImage , title: title  } = props;
+    const { navItemColor: navItemColor , pages: pages , avatarAlt: avatarAlt , avatarImage: avatarImage , title: title , color: color = $4df044613c4d8e22$var$Color.Default , onClick: onClick = $4df044613c4d8e22$var$noop , handleTitleClick: handleTitleClick = $4df044613c4d8e22$var$noop  } = props;
     const [anchorElNav, setAnchorElNav] = (0, $4dtzN$useState)(null);
-    const [anchorElUser, setAnchorElUser] = (0, $4dtzN$useState)(null);
     const handleOpenNavMenu = (event)=>{
         setAnchorElNav(event.currentTarget);
     };
-    const handleCloseNavMenu = ()=>{
+    const handleNavItemClick = (event)=>{
         setAnchorElNav(null);
+        onClick && onClick(event);
     };
     return /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$AppBar), {
         position: "static",
+        color: color,
         children: /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Container), {
             maxWidth: "xl",
             children: /*#__PURE__*/ (0, $4dtzN$jsxs)((0, $4dtzN$Toolbar), {
@@ -341,7 +351,7 @@ function $4df044613c4d8e22$var$NavBar(props) {
                         variant: "h6",
                         noWrap: true,
                         component: "a",
-                        href: "/",
+                        onClick: handleTitleClick,
                         sx: {
                             mr: 2,
                             display: {
@@ -352,7 +362,8 @@ function $4df044613c4d8e22$var$NavBar(props) {
                             fontWeight: 700,
                             letterSpacing: ".3rem",
                             color: "inherit",
-                            textDecoration: "none"
+                            textDecoration: "none",
+                            cursor: "pointer"
                         },
                         children: title
                     }),
@@ -387,7 +398,7 @@ function $4df044613c4d8e22$var$NavBar(props) {
                                     horizontal: "left"
                                 },
                                 open: Boolean(anchorElNav),
-                                onClose: handleCloseNavMenu,
+                                onClose: handleNavItemClick,
                                 sx: {
                                     display: {
                                         xs: "block",
@@ -395,7 +406,7 @@ function $4df044613c4d8e22$var$NavBar(props) {
                                     }
                                 },
                                 children: pages.map((page)=>/*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$MenuItem), {
-                                        onClick: handleCloseNavMenu,
+                                        onClick: handleNavItemClick,
                                         children: /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
                                             textAlign: "center",
                                             children: page
@@ -416,7 +427,7 @@ function $4df044613c4d8e22$var$NavBar(props) {
                                 md: "none"
                             },
                             flexGrow: 1,
-                            fontFamily: "monospace",
+                            // fontFamily: "monospace",
                             fontWeight: 700,
                             letterSpacing: ".3rem",
                             color: "inherit",
@@ -433,11 +444,12 @@ function $4df044613c4d8e22$var$NavBar(props) {
                             }
                         },
                         children: pages.map((page)=>/*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Button), {
-                                onClick: handleCloseNavMenu,
+                                onClick: handleNavItemClick,
                                 sx: {
-                                    color: "white",
+                                    color: navItemColor,
                                     display: "block"
                                 },
+                                id: `blog-nav-item-${page}`,
                                 children: page
                             }, page))
                     }),
