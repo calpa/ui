@@ -18,6 +18,7 @@ var $kRA3g$muimaterialGrid = require("@mui/material/Grid");
 var $kRA3g$muimaterialLink = require("@mui/material/Link");
 var $kRA3g$muimaterialTextField = require("@mui/material/TextField");
 var $kRA3g$muimaterialTypography = require("@mui/material/Typography");
+var $kRA3g$svgjapansrc_coreclass = require("svg-japan/src/_core-class");
 
 function $parcel$export(e, n, v, s) {
   Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
@@ -35,6 +36,7 @@ $parcel$export(module.exports, "GithubCorner", function () { return $91fb128693f
 $parcel$export(module.exports, "NavBar", function () { return $ed57b44d1f79d01b$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "SignIn", function () { return $af05c24c81a9cc23$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "Tag", function () { return $29cb95a2a78028d8$export$2e2bcd8739ae039; });
+$parcel$export(module.exports, "JapanMap", function () { return $2a43c772779de585$export$2e2bcd8739ae039; });
 
 
 var $dc5d809e961b599a$var$Blockquote = function(props) {
@@ -638,6 +640,29 @@ function $af05c24c81a9cc23$var$SignIn(param) {
 }
 var $af05c24c81a9cc23$export$2e2bcd8739ae039 = $af05c24c81a9cc23$var$SignIn;
 
+
+
+
+
+
+
+function $2a43c772779de585$var$JapanMap(props) {
+    var onClick = props.onClick;
+    var mapRef = (0, $kRA3g$react.useRef)(null);
+    (0, $kRA3g$react.useEffect)(function() {
+        var _mapRef_current, _mapRef_current1;
+        var map = new (0, ($parcel$interopDefault($kRA3g$svgjapansrc_coreclass)))(props);
+        (_mapRef_current = mapRef.current) === null || _mapRef_current === void 0 ? void 0 : _mapRef_current.replaceChildren(map.map_container);
+        (_mapRef_current1 = mapRef.current) === null || _mapRef_current1 === void 0 ? void 0 : _mapRef_current1.addEventListener("svgmap.click", onClick);
+    }, [
+        mapRef,
+        props
+    ]);
+    return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("div", {
+        ref: mapRef
+    });
+}
+var $2a43c772779de585$export$2e2bcd8739ae039 = $2a43c772779de585$var$JapanMap;
 
 
 

@@ -46,6 +46,10 @@
   border-color: rgba(0, 0, 0, 0) #e4e4e4 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
 }
 
+.svg-japan-container .prefecture-map {
+  cursor: pointer;
+}
+
 .github-corner {
   fill: #151513;
   color: #fff;

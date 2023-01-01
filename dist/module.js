@@ -1,6 +1,6 @@
 import "./index.css";
 import {jsx as $4dtzN$jsx, jsxs as $4dtzN$jsxs} from "react/jsx-runtime";
-import {useState as $4dtzN$useState} from "react";
+import {useState as $4dtzN$useState, useRef as $4dtzN$useRef, useEffect as $4dtzN$useEffect} from "react";
 import {Button as $4dtzN$Button, Card as $4dtzN$Card, CardActionArea as $4dtzN$CardActionArea, CardContent as $4dtzN$CardContent, Grid as $4dtzN$Grid, Typography as $4dtzN$Typography, Link as $4dtzN$Link, List as $4dtzN$List, ListItem as $4dtzN$ListItem, AppBar as $4dtzN$AppBar, Container as $4dtzN$Container, Toolbar as $4dtzN$Toolbar, Box as $4dtzN$Box, IconButton as $4dtzN$IconButton, Menu as $4dtzN$Menu, MenuItem as $4dtzN$MenuItem, Tooltip as $4dtzN$Tooltip, Avatar as $4dtzN$Avatar} from "@mui/material";
 import {map as $4dtzN$map} from "lodash";
 import $4dtzN$muiiconsmaterialMenu from "@mui/icons-material/Menu";
@@ -14,6 +14,7 @@ import $4dtzN$muimaterialGrid from "@mui/material/Grid";
 import $4dtzN$muimaterialLink from "@mui/material/Link";
 import $4dtzN$muimaterialTextField from "@mui/material/TextField";
 import $4dtzN$muimaterialTypography from "@mui/material/Typography";
+import $4dtzN$svgjapansrc_coreclass from "svg-japan/src/_core-class";
 
 
 
@@ -605,5 +606,28 @@ var $491d5f8cba17e554$export$2e2bcd8739ae039 = $491d5f8cba17e554$var$SignIn;
 
 
 
-export {$3c428f9ab394f367$export$2e2bcd8739ae039 as Blockquote, $5239fd20ec9f31f3$export$2e2bcd8739ae039 as Button, $616c692299a75f89$export$2e2bcd8739ae039 as Card, $59a70b0d3de6e811$export$2e2bcd8739ae039 as Date, $046e9d052206d34f$export$2e2bcd8739ae039 as Footer, $c7932d61ef8b8d14$export$2e2bcd8739ae039 as GithubCorner, $4df044613c4d8e22$export$2e2bcd8739ae039 as NavBar, $491d5f8cba17e554$export$2e2bcd8739ae039 as SignIn, $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039 as Tag};
+
+
+function $12801aec61afc308$var$JapanMap(props) {
+    const { onClick: onClick  } = props;
+    const mapRef = (0, $4dtzN$useRef)(null);
+    (0, $4dtzN$useEffect)(()=>{
+        var _mapRef_current, _mapRef_current1;
+        const map = new (0, $4dtzN$svgjapansrc_coreclass)(props);
+        (_mapRef_current = mapRef.current) === null || _mapRef_current === void 0 ? void 0 : _mapRef_current.replaceChildren(map.map_container);
+        (_mapRef_current1 = mapRef.current) === null || _mapRef_current1 === void 0 ? void 0 : _mapRef_current1.addEventListener("svgmap.click", onClick);
+    }, [
+        mapRef,
+        props
+    ]);
+    return /*#__PURE__*/ (0, $4dtzN$jsx)("div", {
+        ref: mapRef
+    });
+}
+var $12801aec61afc308$export$2e2bcd8739ae039 = $12801aec61afc308$var$JapanMap;
+
+
+
+
+export {$3c428f9ab394f367$export$2e2bcd8739ae039 as Blockquote, $5239fd20ec9f31f3$export$2e2bcd8739ae039 as Button, $616c692299a75f89$export$2e2bcd8739ae039 as Card, $59a70b0d3de6e811$export$2e2bcd8739ae039 as Date, $046e9d052206d34f$export$2e2bcd8739ae039 as Footer, $c7932d61ef8b8d14$export$2e2bcd8739ae039 as GithubCorner, $4df044613c4d8e22$export$2e2bcd8739ae039 as NavBar, $491d5f8cba17e554$export$2e2bcd8739ae039 as SignIn, $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039 as Tag, $12801aec61afc308$export$2e2bcd8739ae039 as JapanMap};
 //# sourceMappingURL=module.js.map
