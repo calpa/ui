@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { BaseSyntheticEvent, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
@@ -14,37 +14,59 @@ import {
   Typography,
 } from "@mui/material";
 
+enum Color {
+  Default = "default",
+  Inherit = "inherit",
+  Primary = "primary",
+  Secondary = "secondary",
+  Transparent = "transparent",
+}
+
 type NavBarProps = {
   pages: string[];
   avatarAlt: string;
   avatarImage: string;
   title: string;
+  color: Color;
+  navItemColor: string;
+  onClick?: (event: BaseSyntheticEvent) => void;
+  handleTitleClick?: (event: BaseSyntheticEvent) => void;
 };
 
+function noop() {}
+
 function NavBar(props: NavBarProps) {
-  const { pages, avatarAlt, avatarImage, title } = props;
+  const {
+    navItemColor,
+    pages,
+    avatarAlt,
+    avatarImage,
+    title,
+    color = Color.Default,
+    onClick = noop,
+    handleTitleClick = noop,
+  } = props;
 
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
 
   const handleOpenNavMenu = (event: any) => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
+  const handleNavItemClick = (event: BaseSyntheticEvent) => {
     setAnchorElNav(null);
+    onClick && onClick(event);
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color={color}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            onClick={handleTitleClick}
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -53,6 +75,7 @@ function NavBar(props: NavBarProps) {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              cursor: "pointer",
             }}
           >
             {title}
@@ -82,19 +105,18 @@ function NavBar(props: NavBarProps) {
                 horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              onClose={handleNavItemClick}
               sx={{
                 display: { xs: "block", md: "none" },
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={handleNavItemClick}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -104,7 +126,7 @@ function NavBar(props: NavBarProps) {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              // fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
@@ -117,8 +139,9 @@ function NavBar(props: NavBarProps) {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ color: "white", display: "block" }}
+                onClick={handleNavItemClick}
+                sx={{ color: navItemColor, display: "block" }}
+                id={`blog-nav-item-${page}`}
               >
                 {page}
               </Button>

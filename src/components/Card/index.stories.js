@@ -3,6 +3,7 @@ import Card from ".";
 export default {
   title: "Components/Card",
   component: Card,
+  argTypes: { onClick: { action: "clicked" } },
 };
 
 const Template = (args) => <Card {...args} />;

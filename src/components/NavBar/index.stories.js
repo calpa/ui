@@ -3,6 +3,10 @@ import NavBar from ".";
 export default {
   title: "Components/NavBar",
   component: NavBar,
+  argTypes: {
+    onClick: { action: "clicked" },
+    handleTitleClick: { action: "clicked" },
+  },
 };
 
 const Template = (args) => <NavBar {...args} />;
