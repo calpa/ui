@@ -15,6 +15,7 @@ const Date: FC<DateProps> = (props) => {
         padding: "10px",
         width: "110px",
         textAlign: "center",
+        fontSize: `16px`,
       }}
     >
       {date}
