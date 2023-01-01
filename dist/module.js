@@ -63,7 +63,8 @@ const $59a70b0d3de6e811$var$Date = (props)=>{
             color: "#fff",
             padding: "10px",
             width: "110px",
-            textAlign: "center"
+            textAlign: "center",
+            fontSize: `16px`
         },
         children: date
     });
@@ -73,7 +74,7 @@ var $59a70b0d3de6e811$export$2e2bcd8739ae039 = $59a70b0d3de6e811$var$Date;
 
 
 
-const $cc13e3b1dd9d7ba1$var$Tag = ({ tag: tag , children: children , Link: Link = "a"  })=>{
+const $cc13e3b1dd9d7ba1$var$Tag = ({ tag: tag , Link: Link = "a"  })=>{
     // Check if the Link prop is an "a" tag
     const isAnchor = Link === "a"; // Will be true if Link is an "a" tag
     // Use the appropriate prop based on the value of the Link prop

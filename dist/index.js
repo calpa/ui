@@ -82,7 +82,8 @@ var $5f2b0527349d74dd$var$Date = function(props) {
             color: "#fff",
             padding: "10px",
             width: "110px",
-            textAlign: "center"
+            textAlign: "center",
+            fontSize: "16px"
         },
         children: date
     });
@@ -96,7 +97,7 @@ var $5f2b0527349d74dd$export$2e2bcd8739ae039 = $5f2b0527349d74dd$var$Date;
 
 
 var $29cb95a2a78028d8$var$Tag = function(param) {
-    var tag = param.tag, children = param.children, _param_Link = param.Link, Link = _param_Link === void 0 ? "a" : _param_Link;
+    var tag = param.tag, _param_Link = param.Link, Link = _param_Link === void 0 ? "a" : _param_Link;
     // Check if the Link prop is an "a" tag
     var isAnchor = Link === "a"; // Will be true if Link is an "a" tag
     var _obj;
