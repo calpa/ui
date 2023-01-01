@@ -12,7 +12,10 @@
     "noImplicitAny": true,
     "skipLibCheck": true,
     "jsx": "react-jsx",
-    "allowJs": true
+    "allowJs": true,
+    "paths": {
+      "*": ["./src/types/*"]
+    }
   },
   "include": ["./src/components/**/*"],
   "exclude": [

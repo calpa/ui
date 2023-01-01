@@ -47,6 +47,7 @@ specifiers:
   react-dom: ^18.2.0
   react-scripts: 5.0.1
   semantic-release: ^19.0.5
+  svg-japan: ^1.1.2
   typescript: ^4.9.4
   web-vitals: ^2.1.4
   webpack: ^5.75.0
@@ -79,6 +80,7 @@ dependencies:
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-scripts: 5.0.1_o77wnou4wwnegu5woljtklrzru
+  svg-japan: 1.1.2
   typescript: 4.9.4
   web-vitals: 2.1.4
 
@@ -23835,6 +23837,15 @@ packages:
         integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==,
       }
     engines: { node: ">= 0.4" }
+
+  /svg-japan/1.1.2:
+    resolution:
+      {
+        integrity: sha512-P0kmogkKnxVszNUlxQmK6+YCzAtBAlWpVJ42C+FrzwRJ1/KNMq18GQSfqRLC4bm8ocWoDOg2u6hzP6InXcojBQ==,
+      }
+    dependencies:
+      core-js: 3.27.1
+    dev: false
 
   /svg-parser/2.0.4:
     resolution:
