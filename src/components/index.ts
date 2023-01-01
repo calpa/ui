@@ -7,3 +7,4 @@ export { default as GithubCorner } from "./GithubCorner";
 export { default as NavBar } from "./NavBar";
 export { default as SignIn } from "./SignIn";
 export { default as Tag } from "./Tag";
+export { default as JapanMap } from "./JapanMap";
