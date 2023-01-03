@@ -32,21 +32,24 @@ const CustomCard = (props: CustomCardProps) => {
     >
       <CardActionArea>
         <CardContent>
-          <Grid
-            container
-            alignItems="flex-start"
-            justifyContent="space-between"
+          <Typography
+            variant="h1"
+            sx={{
+              textDecoration: "none",
+            }}
           >
+            {title}
+          </Typography>
+          {showDateComponent && (
             <Typography
-              variant="h1"
               sx={{
-                textDecoration: "none",
+                fontSize: "14px",
+                color: "#585858",
               }}
             >
-              {title}
+              {date}
             </Typography>
-            {showDateComponent && <Date date={date} />}
-          </Grid>
+          )}
           <Typography
             sx={{
               fontSize: `14px`,
