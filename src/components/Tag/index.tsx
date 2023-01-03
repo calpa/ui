@@ -1,23 +1,19 @@
 import "./index.css";
-import { FC } from "react";
 
+import EnhancedLink from "../EnhancedLink";
 import { TagProps } from "./tag";
 
-const Tag: FC<TagProps> = ({ tag, Link = "a" }) => {
-  // Check if the Link prop is an "a" tag
-  const isAnchor = Link === "a"; // Will be true if Link is an "a" tag
-
-  // Use the appropriate prop based on the value of the Link prop
-  const linkProps = {
-    [isAnchor ? "href" : "to"]: `/tag/${tag}`,
-    className: "tag",
-  };
-
-  return <Link {...linkProps}>{tag}</Link>;
+const Tag = ({ tag, Link = "a" }: TagProps) => {
+  return (
+    <EnhancedLink url={`/tag/${tag}`} className="tag" Link={Link}>
+      {tag}
+    </EnhancedLink>
+  );
 };
 
 Tag.defaultProps = {
   tag: "",
+  className: "tag",
 };
 
 export default Tag;

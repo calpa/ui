@@ -11,4 +11,5 @@ export const Default = Template.bind({});
 Default.args = {
   tag: "JavaScript",
   children: "JavaScript",
+  className: "tag",
 };

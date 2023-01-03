@@ -6,7 +6,7 @@ import {
   Typography,
 } from "@mui/material";
 import { map } from "lodash";
-import Date from "../Date";
+// import Date from "../Date";
 import Tag from "../Tag";
 import { CustomCardProps } from "./card";
 
