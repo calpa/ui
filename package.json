@@ -41,15 +41,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "start-storybook -p 6006 -s public",
+    "start": "start-storybook -p 6006",
     "clean": "rm -rf ./dist",
     "watch": "parcel watch",
     "build": "parcel build",
     "check": "tsc --noEmit",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "prepare": "husky install"
   },
   "eslintConfig": {
