@@ -710,7 +710,6 @@ var $549c942270c6569d$export$2e2bcd8739ae039 = $549c942270c6569d$var$ListItem;
 const $41271ef438f10a90$export$28e6b9b82ee883c = (0, $4dtzN$makeStyles)({
     name: "List"
 })((theme)=>({
-        container: {},
         topic: {
             margin: "0",
             padding: "0 0 0 28px",
@@ -727,6 +726,7 @@ const $41271ef438f10a90$export$28e6b9b82ee883c = (0, $4dtzN$makeStyles)({
             fontSize: "21px"
         },
         content: {
+            margin: 0,
             border: `2px solid #dadada`,
             borderTop: `0 none`,
             padding: `16px 25px 15px`
@@ -738,7 +738,6 @@ const $e0286b9fddaa70d5$var$List = (props)=>{
     const { listItems: listItems , topic: topic , Link: Link  } = props;
     const { classes: classes , cx: cx  } = (0, $41271ef438f10a90$export$28e6b9b82ee883c)();
     return /*#__PURE__*/ (0, $4dtzN$jsxs)("div", {
-        className: cx(classes.container),
         children: [
             /*#__PURE__*/ (0, $4dtzN$jsx)("h2", {
                 className: cx(classes.topic),
@@ -746,7 +745,7 @@ const $e0286b9fddaa70d5$var$List = (props)=>{
                     children: topic
                 })
             }),
-            /*#__PURE__*/ (0, $4dtzN$jsx)("div", {
+            /*#__PURE__*/ (0, $4dtzN$jsx)("ol", {
                 className: cx(classes.content),
                 children: listItems.map((item, index)=>/*#__PURE__*/ (0, $4dtzN$jsx)((0, $549c942270c6569d$export$2e2bcd8739ae039), {
                         ...item,
