@@ -12,15 +12,15 @@ const List = (props: ListProps) => {
   const { listItems, topic, Link } = props;
   const { classes, cx } = useStyles();
   return (
-    <div className={cx(classes.container)}>
+    <div>
       <h2 className={cx(classes.topic)}>
         <span>{topic}</span>
       </h2>
-      <div className={cx(classes.content)}>
+      <ol className={cx(classes.content)}>
         {listItems.map((item, index) => (
           <ListItem key={index} {...item} Link={Link} />
         ))}
-      </div>
+      </ol>
     </div>
   );
 };

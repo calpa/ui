@@ -3,7 +3,6 @@ import { makeStyles } from "tss-react/mui";
 export const useStyles = makeStyles({
   name: "List",
 })((theme) => ({
-  container: {},
   topic: {
     margin: "0",
     padding: "0 0 0 28px",
@@ -20,6 +19,7 @@ export const useStyles = makeStyles({
     fontSize: "21px",
   },
   content: {
+    margin: 0,
     border: `2px solid #dadada`,
     borderTop: `0 none`,
     padding: `16px 25px 15px`,
