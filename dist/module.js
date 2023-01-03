@@ -56,21 +56,39 @@ var $5239fd20ec9f31f3$export$2e2bcd8739ae039 = $5239fd20ec9f31f3$var$CustomButto
 
 
 
-const $cc13e3b1dd9d7ba1$var$Tag = ({ tag: tag , Link: Link = "a"  })=>{
+
+const $4dba5b0eac16741b$var$EnhancedLink = (props)=>{
+    const { url: url , children: children , Link: Link = "a" , className: className  } = props;
     // Check if the Link prop is an "a" tag
     const isAnchor = Link === "a"; // Will be true if Link is an "a" tag
     // Use the appropriate prop based on the value of the Link prop
     const linkProps = {
-        [isAnchor ? "href" : "to"]: `/tag/${tag}`,
-        className: "tag"
+        [isAnchor ? "href" : "to"]: url,
+        className: className
     };
     return /*#__PURE__*/ (0, $4dtzN$jsx)(Link, {
         ...linkProps,
+        children: children
+    });
+};
+$4dba5b0eac16741b$var$EnhancedLink.defaultProps = {
+    tag: "",
+    className: "tag"
+};
+var $4dba5b0eac16741b$export$2e2bcd8739ae039 = $4dba5b0eac16741b$var$EnhancedLink;
+
+
+const $cc13e3b1dd9d7ba1$var$Tag = ({ tag: tag , Link: Link = "a"  })=>{
+    return /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dba5b0eac16741b$export$2e2bcd8739ae039), {
+        url: `/tag/${tag}`,
+        className: "tag",
+        Link: Link,
         children: tag
     });
 };
 $cc13e3b1dd9d7ba1$var$Tag.defaultProps = {
-    tag: ""
+    tag: "",
+    className: "tag"
 };
 var $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039 = $cc13e3b1dd9d7ba1$var$Tag;
 

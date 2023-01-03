@@ -79,19 +79,37 @@ var $d9fd4d1486bbea23$export$2e2bcd8739ae039 = $d9fd4d1486bbea23$var$CustomButto
 
 
 
-var $29cb95a2a78028d8$var$Tag = function(param) {
-    var tag = param.tag, _param_Link = param.Link, Link = _param_Link === void 0 ? "a" : _param_Link;
+
+var $9cdc15315f7c2b11$var$EnhancedLink = function(props) {
+    var url = props.url, children = props.children, _props_Link = props.Link, Link = _props_Link === void 0 ? "a" : _props_Link, className = props.className;
     // Check if the Link prop is an "a" tag
     var isAnchor = Link === "a"; // Will be true if Link is an "a" tag
     var _obj;
     // Use the appropriate prop based on the value of the Link prop
-    var linkProps = (_obj = {}, (0, ($parcel$interopDefault($kRA3g$swchelperslib_define_propertyjs)))(_obj, isAnchor ? "href" : "to", "/tag/".concat(tag)), (0, ($parcel$interopDefault($kRA3g$swchelperslib_define_propertyjs)))(_obj, "className", "tag"), _obj);
+    var linkProps = (_obj = {}, (0, ($parcel$interopDefault($kRA3g$swchelperslib_define_propertyjs)))(_obj, isAnchor ? "href" : "to", url), (0, ($parcel$interopDefault($kRA3g$swchelperslib_define_propertyjs)))(_obj, "className", className), _obj);
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)(Link, (0, ($parcel$interopDefault($kRA3g$swchelperslib_object_spread_propsjs)))((0, ($parcel$interopDefault($kRA3g$swchelperslib_object_spreadjs)))({}, linkProps), {
-        children: tag
+        children: children
     }));
 };
+$9cdc15315f7c2b11$var$EnhancedLink.defaultProps = {
+    tag: "",
+    className: "tag"
+};
+var $9cdc15315f7c2b11$export$2e2bcd8739ae039 = $9cdc15315f7c2b11$var$EnhancedLink;
+
+
+var $29cb95a2a78028d8$var$Tag = function(param) {
+    var tag = param.tag, _param_Link = param.Link, Link = _param_Link === void 0 ? "a" : _param_Link;
+    return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $9cdc15315f7c2b11$export$2e2bcd8739ae039), {
+        url: "/tag/".concat(tag),
+        className: "tag",
+        Link: Link,
+        children: tag
+    });
+};
 $29cb95a2a78028d8$var$Tag.defaultProps = {
-    tag: ""
+    tag: "",
+    className: "tag"
 };
 var $29cb95a2a78028d8$export$2e2bcd8739ae039 = $29cb95a2a78028d8$var$Tag;
 
