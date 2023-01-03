@@ -29,5 +29,9 @@ export const useStyles = makeStyles({
     listStyleType: "none",
     height: `45px`,
     borderBottom: `1px dotted #bfbfbf`,
+    transition: `background-color 0.2s ease-in-out`,
+    "&:hover": {
+      backgroundColor: theme.palette.grey[200],
+    },
   },
 }));

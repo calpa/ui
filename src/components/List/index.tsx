@@ -11,7 +11,7 @@ const List = (props: ListProps) => {
   const { listItems, topic } = props;
   const { classes, cx } = useStyles();
   return (
-    <div id="hotnews" className="block">
+    <div className={cx(classes.container)}>
       <h2 className={cx(classes.topic)}>
         <span>{topic}</span>
       </h2>
