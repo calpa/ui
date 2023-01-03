@@ -16,4 +16,6 @@ Default.args = {
   pages: ["Portfolios", "Articles", "Tags"],
   avatarAlt: "Nyahello",
   title: "BLOG",
+  position: "fixed",
+  color: "default",
 };

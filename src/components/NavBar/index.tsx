@@ -31,6 +31,7 @@ type NavBarProps = {
   navItemColor: string;
   onClick?: (event: BaseSyntheticEvent) => void;
   handleTitleClick?: (event: BaseSyntheticEvent) => void;
+  position?: "fixed" | "absolute" | "sticky" | "static" | "relative";
 };
 
 function noop() {}
@@ -45,6 +46,7 @@ function NavBar(props: NavBarProps) {
     color = Color.Default,
     onClick = noop,
     handleTitleClick = noop,
+    position,
   } = props;
 
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -59,7 +61,7 @@ function NavBar(props: NavBarProps) {
   };
 
   return (
-    <AppBar position="static" color={color}>
+    <AppBar color={color} position={position}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -121,17 +123,17 @@ function NavBar(props: NavBarProps) {
             variant="h5"
             noWrap
             component="a"
-            href=""
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              // fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
+              cursor: "pointer",
             }}
+            onClick={handleTitleClick}
           >
             {title}
           </Typography>
