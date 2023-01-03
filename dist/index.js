@@ -713,7 +713,11 @@ var $1efe406630024670$export$28e6b9b82ee883c = (0, $kRA3g$tssreactmui.makeStyles
         listItem: {
             listStyleType: "none",
             height: "45px",
-            borderBottom: "1px dotted #bfbfbf"
+            borderBottom: "1px dotted #bfbfbf",
+            transition: "background-color 0.2s ease-in-out",
+            "&:hover": {
+                backgroundColor: theme.palette.grey[200]
+            }
         }
     };
 });
@@ -746,8 +750,9 @@ var $643eb70d8c2c1db5$export$2e2bcd8739ae039 = $643eb70d8c2c1db5$var$ListItem;
 
 var $bfdcb8ef6426edb8$export$28e6b9b82ee883c = (0, $kRA3g$tssreactmui.makeStyles)({
     name: "List"
-})(function() {
+})(function(theme) {
     return {
+        container: {},
         topic: {
             margin: "0",
             padding: "0 0 0 28px",
@@ -758,7 +763,10 @@ var $bfdcb8ef6426edb8$export$28e6b9b82ee883c = (0, $kRA3g$tssreactmui.makeStyles
             position: "relative",
             borderBottom: "2px solid #dadada",
             lineHeight: "30px",
-            background: "no-repeat left center"
+            background: "no-repeat left center",
+            color: theme.palette.primary.main,
+            fontWeight: "bold",
+            fontSize: "21px"
         },
         content: {
             border: "2px solid #dadada",
@@ -773,8 +781,7 @@ var $a115ed1cf3bff1f5$var$List = function(props) {
     var listItems = props.listItems, topic = props.topic;
     var _useStyles = (0, $bfdcb8ef6426edb8$export$28e6b9b82ee883c)(), classes = _useStyles.classes, cx = _useStyles.cx;
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)("div", {
-        id: "hotnews",
-        className: "block",
+        className: cx(classes.container),
         children: [
             /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("h2", {
                 className: cx(classes.topic),

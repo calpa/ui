@@ -672,7 +672,11 @@ const $9f5b9e0d41047128$export$28e6b9b82ee883c = (0, $4dtzN$makeStyles)({
         listItem: {
             listStyleType: "none",
             height: `45px`,
-            borderBottom: `1px dotted #bfbfbf`
+            borderBottom: `1px dotted #bfbfbf`,
+            transition: `background-color 0.2s ease-in-out`,
+            "&:hover": {
+                backgroundColor: theme.palette.grey[200]
+            }
         }
     }));
 
@@ -704,7 +708,8 @@ var $549c942270c6569d$export$2e2bcd8739ae039 = $549c942270c6569d$var$ListItem;
 
 const $41271ef438f10a90$export$28e6b9b82ee883c = (0, $4dtzN$makeStyles)({
     name: "List"
-})(()=>({
+})((theme)=>({
+        container: {},
         topic: {
             margin: "0",
             padding: "0 0 0 28px",
@@ -715,7 +720,10 @@ const $41271ef438f10a90$export$28e6b9b82ee883c = (0, $4dtzN$makeStyles)({
             position: "relative",
             borderBottom: "2px solid #dadada",
             lineHeight: "30px",
-            background: "no-repeat left center"
+            background: "no-repeat left center",
+            color: theme.palette.primary.main,
+            fontWeight: "bold",
+            fontSize: "21px"
         },
         content: {
             border: `2px solid #dadada`,
@@ -729,8 +737,7 @@ const $e0286b9fddaa70d5$var$List = (props)=>{
     const { listItems: listItems , topic: topic  } = props;
     const { classes: classes , cx: cx  } = (0, $41271ef438f10a90$export$28e6b9b82ee883c)();
     return /*#__PURE__*/ (0, $4dtzN$jsxs)("div", {
-        id: "hotnews",
-        className: "block",
+        className: cx(classes.container),
         children: [
             /*#__PURE__*/ (0, $4dtzN$jsx)("h2", {
                 className: cx(classes.topic),
