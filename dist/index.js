@@ -366,7 +366,7 @@ var $ed57b44d1f79d01b$var$Color;
 })($ed57b44d1f79d01b$var$Color || ($ed57b44d1f79d01b$var$Color = {}));
 function $ed57b44d1f79d01b$var$noop() {}
 function $ed57b44d1f79d01b$var$NavBar(props) {
-    var navItemColor = props.navItemColor, pages = props.pages, avatarAlt = props.avatarAlt, avatarImage = props.avatarImage, title = props.title, _props_color = props.color, color = _props_color === void 0 ? $ed57b44d1f79d01b$var$Color.Default : _props_color, _props_onClick = props.onClick, onClick = _props_onClick === void 0 ? $ed57b44d1f79d01b$var$noop : _props_onClick, _props_handleTitleClick = props.handleTitleClick, handleTitleClick = _props_handleTitleClick === void 0 ? $ed57b44d1f79d01b$var$noop : _props_handleTitleClick;
+    var navItemColor = props.navItemColor, pages = props.pages, avatarAlt = props.avatarAlt, avatarImage = props.avatarImage, title = props.title, _props_color = props.color, color = _props_color === void 0 ? $ed57b44d1f79d01b$var$Color.Default : _props_color, _props_onClick = props.onClick, onClick = _props_onClick === void 0 ? $ed57b44d1f79d01b$var$noop : _props_onClick, _props_handleTitleClick = props.handleTitleClick, handleTitleClick = _props_handleTitleClick === void 0 ? $ed57b44d1f79d01b$var$noop : _props_handleTitleClick, position = props.position;
     var _useState = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))((0, $kRA3g$react.useState)(null), 2), anchorElNav = _useState[0], setAnchorElNav = _useState[1];
     var handleOpenNavMenu = function(event) {
         setAnchorElNav(event.currentTarget);
@@ -376,8 +376,8 @@ function $ed57b44d1f79d01b$var$NavBar(props) {
         onClick && onClick(event);
     };
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.AppBar), {
-        position: "static",
         color: color,
+        position: position,
         children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Container), {
             maxWidth: "xl",
             children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)((0, $kRA3g$muimaterial.Toolbar), {
@@ -457,7 +457,6 @@ function $ed57b44d1f79d01b$var$NavBar(props) {
                         variant: "h5",
                         noWrap: true,
                         component: "a",
-                        href: "",
                         sx: {
                             mr: 2,
                             display: {
@@ -465,12 +464,13 @@ function $ed57b44d1f79d01b$var$NavBar(props) {
                                 md: "none"
                             },
                             flexGrow: 1,
-                            // fontFamily: "monospace",
                             fontWeight: 700,
                             letterSpacing: ".3rem",
                             color: "inherit",
-                            textDecoration: "none"
+                            textDecoration: "none",
+                            cursor: "pointer"
                         },
+                        onClick: handleTitleClick,
                         children: title
                     }),
                     /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Box), {

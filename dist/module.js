@@ -334,7 +334,7 @@ let $4df044613c4d8e22$var$Color;
 })($4df044613c4d8e22$var$Color || ($4df044613c4d8e22$var$Color = {}));
 function $4df044613c4d8e22$var$noop() {}
 function $4df044613c4d8e22$var$NavBar(props) {
-    const { navItemColor: navItemColor , pages: pages , avatarAlt: avatarAlt , avatarImage: avatarImage , title: title , color: color = $4df044613c4d8e22$var$Color.Default , onClick: onClick = $4df044613c4d8e22$var$noop , handleTitleClick: handleTitleClick = $4df044613c4d8e22$var$noop  } = props;
+    const { navItemColor: navItemColor , pages: pages , avatarAlt: avatarAlt , avatarImage: avatarImage , title: title , color: color = $4df044613c4d8e22$var$Color.Default , onClick: onClick = $4df044613c4d8e22$var$noop , handleTitleClick: handleTitleClick = $4df044613c4d8e22$var$noop , position: position  } = props;
     const [anchorElNav, setAnchorElNav] = (0, $4dtzN$useState)(null);
     const handleOpenNavMenu = (event)=>{
         setAnchorElNav(event.currentTarget);
@@ -344,8 +344,8 @@ function $4df044613c4d8e22$var$NavBar(props) {
         onClick && onClick(event);
     };
     return /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$AppBar), {
-        position: "static",
         color: color,
+        position: position,
         children: /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Container), {
             maxWidth: "xl",
             children: /*#__PURE__*/ (0, $4dtzN$jsxs)((0, $4dtzN$Toolbar), {
@@ -423,7 +423,6 @@ function $4df044613c4d8e22$var$NavBar(props) {
                         variant: "h5",
                         noWrap: true,
                         component: "a",
-                        href: "",
                         sx: {
                             mr: 2,
                             display: {
@@ -431,12 +430,13 @@ function $4df044613c4d8e22$var$NavBar(props) {
                                 md: "none"
                             },
                             flexGrow: 1,
-                            // fontFamily: "monospace",
                             fontWeight: 700,
                             letterSpacing: ".3rem",
                             color: "inherit",
-                            textDecoration: "none"
+                            textDecoration: "none",
+                            cursor: "pointer"
                         },
+                        onClick: handleTitleClick,
                         children: title
                     }),
                     /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Box), {
