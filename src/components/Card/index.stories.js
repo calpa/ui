@@ -14,6 +14,26 @@ Default.args = {
   description: "Description",
   date: "2022-12-01",
   tags: ["JavaScript", "React.js", "Node.js"],
+  showTagsComponent: true,
+  showDateComponent: true,
+};
+
+export const WithoutDate = Template.bind({});
+WithoutDate.args = {
+  title: "Title",
+  description: "Description",
+  date: "",
+  showDateComponent: false,
+  tags: ["JavaScript", "React.js", "Node.js"],
+};
+
+export const WithoutTags = Template.bind({});
+WithoutTags.args = {
+  title: "Title",
+  description: "Description",
+  date: "2022-12-01",
+  showTagsComponent: false,
+  tags: ["JavaScript", "React.js", "Node.js"],
 };
 
 export const LongTitle = Template.bind({});

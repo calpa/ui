@@ -1,4 +1,3 @@
-import { FC } from "react";
 import {
   Card,
   CardActionArea,
@@ -11,7 +10,7 @@ import Date from "../Date";
 import Tag from "../Tag";
 import { CustomCardProps } from "./card";
 
-const CustomCard: FC<CustomCardProps> = ({
+const CustomCard = ({
   onClick,
   title,
   description,
@@ -19,7 +18,9 @@ const CustomCard: FC<CustomCardProps> = ({
   moreText,
   tags,
   Link,
-}) => {
+  showDateComponent,
+  showTagsComponent,
+}: CustomCardProps) => {
   return (
     <Card
       sx={{
@@ -45,16 +46,18 @@ const CustomCard: FC<CustomCardProps> = ({
                 {title}
               </Typography>
             </Grid>
-            <Date date={date} />
+            {showDateComponent && <Date date={date} />}
           </Grid>
           <Typography>{description}</Typography>
-          <Grid container item xs={12}>
-            {map(tags, (tag) => (
-              <Tag tag={tag} key={tag} Link={Link}>
-                {tag}
-              </Tag>
-            ))}
-          </Grid>
+          {showTagsComponent && (
+            <Grid container item xs={12}>
+              {map(tags, (tag) => (
+                <Tag tag={tag} key={tag} Link={Link}>
+                  {tag}
+                </Tag>
+              ))}
+            </Grid>
+          )}
           <Typography color="blue.main">{moreText}</Typography>
         </CardContent>
       </CardActionArea>
@@ -65,6 +68,8 @@ const CustomCard: FC<CustomCardProps> = ({
 CustomCard.defaultProps = {
   moreText: "Read More",
   tags: [],
+  showTagsComponent: true,
+  showDateComponent: true,
 };
 
 export default CustomCard;

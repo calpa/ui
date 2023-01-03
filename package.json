@@ -41,7 +41,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "start-storybook -p 6006 -s public",
     "clean": "rm -rf ./dist",
     "watch": "parcel watch",
     "build": "parcel build",
