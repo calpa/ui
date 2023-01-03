@@ -78,6 +78,7 @@ var $d9fd4d1486bbea23$export$2e2bcd8739ae039 = $d9fd4d1486bbea23$var$CustomButto
 
 var $5f2b0527349d74dd$var$Date = function(props) {
     var date = props.date;
+    if (!date) return null;
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
         sx: {
             backgroundColor: "blue.main",
@@ -116,7 +117,7 @@ var $29cb95a2a78028d8$export$2e2bcd8739ae039 = $29cb95a2a78028d8$var$Tag;
 
 
 var $9d11b387092b23df$var$CustomCard = function(param) {
-    var onClick = param.onClick, title = param.title, description = param.description, date = param.date, moreText = param.moreText, tags = param.tags, Link = param.Link;
+    var onClick = param.onClick, title = param.title, description = param.description, date = param.date, moreText = param.moreText, tags = param.tags, Link = param.Link, showDateComponent = param.showDateComponent, showTagsComponent = param.showTagsComponent;
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Card), {
         sx: {
             marginBottom: "10px"
@@ -143,7 +144,7 @@ var $9d11b387092b23df$var$CustomCard = function(param) {
                                     children: title
                                 })
                             }),
-                            /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $5f2b0527349d74dd$export$2e2bcd8739ae039), {
+                            showDateComponent && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $5f2b0527349d74dd$export$2e2bcd8739ae039), {
                                 date: date
                             })
                         ]
@@ -151,7 +152,7 @@ var $9d11b387092b23df$var$CustomCard = function(param) {
                     /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
                         children: description
                     }),
-                    /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Grid), {
+                    showTagsComponent && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Grid), {
                         container: true,
                         item: true,
                         xs: 12,
@@ -174,7 +175,9 @@ var $9d11b387092b23df$var$CustomCard = function(param) {
 };
 $9d11b387092b23df$var$CustomCard.defaultProps = {
     moreText: "Read More",
-    tags: []
+    tags: [],
+    showTagsComponent: true,
+    showDateComponent: true
 };
 var $9d11b387092b23df$export$2e2bcd8739ae039 = $9d11b387092b23df$var$CustomCard;
 

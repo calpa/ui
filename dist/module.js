@@ -58,6 +58,7 @@ var $5239fd20ec9f31f3$export$2e2bcd8739ae039 = $5239fd20ec9f31f3$var$CustomButto
 
 const $59a70b0d3de6e811$var$Date = (props)=>{
     const { date: date  } = props;
+    if (!date) return null;
     return /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
         sx: {
             backgroundColor: "blue.main",
@@ -94,7 +95,7 @@ $cc13e3b1dd9d7ba1$var$Tag.defaultProps = {
 var $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039 = $cc13e3b1dd9d7ba1$var$Tag;
 
 
-const $616c692299a75f89$var$CustomCard = ({ onClick: onClick , title: title , description: description , date: date , moreText: moreText , tags: tags , Link: Link  })=>{
+const $616c692299a75f89$var$CustomCard = ({ onClick: onClick , title: title , description: description , date: date , moreText: moreText , tags: tags , Link: Link , showDateComponent: showDateComponent , showTagsComponent: showTagsComponent  })=>{
     return /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Card), {
         sx: {
             marginBottom: "10px"
@@ -121,7 +122,7 @@ const $616c692299a75f89$var$CustomCard = ({ onClick: onClick , title: title , de
                                     children: title
                                 })
                             }),
-                            /*#__PURE__*/ (0, $4dtzN$jsx)((0, $59a70b0d3de6e811$export$2e2bcd8739ae039), {
+                            showDateComponent && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $59a70b0d3de6e811$export$2e2bcd8739ae039), {
                                 date: date
                             })
                         ]
@@ -129,7 +130,7 @@ const $616c692299a75f89$var$CustomCard = ({ onClick: onClick , title: title , de
                     /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
                         children: description
                     }),
-                    /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Grid), {
+                    showTagsComponent && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Grid), {
                         container: true,
                         item: true,
                         xs: 12,
@@ -150,7 +151,9 @@ const $616c692299a75f89$var$CustomCard = ({ onClick: onClick , title: title , de
 };
 $616c692299a75f89$var$CustomCard.defaultProps = {
     moreText: "Read More",
-    tags: []
+    tags: [],
+    showTagsComponent: true,
+    showDateComponent: true
 };
 var $616c692299a75f89$export$2e2bcd8739ae039 = $616c692299a75f89$var$CustomCard;
 
