@@ -19,6 +19,7 @@ var $kRA3g$muimaterialLink = require("@mui/material/Link");
 var $kRA3g$muimaterialTextField = require("@mui/material/TextField");
 var $kRA3g$muimaterialTypography = require("@mui/material/Typography");
 var $kRA3g$svgjapansrc_coreclass = require("svg-japan/src/_core-class");
+var $kRA3g$tssreactmui = require("tss-react/mui");
 
 function $parcel$export(e, n, v, s) {
   Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
@@ -37,6 +38,8 @@ $parcel$export(module.exports, "NavBar", function () { return $ed57b44d1f79d01b$
 $parcel$export(module.exports, "SignIn", function () { return $af05c24c81a9cc23$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "Tag", function () { return $29cb95a2a78028d8$export$2e2bcd8739ae039; });
 $parcel$export(module.exports, "JapanMap", function () { return $2a43c772779de585$export$2e2bcd8739ae039; });
+$parcel$export(module.exports, "List", function () { return $a115ed1cf3bff1f5$export$2e2bcd8739ae039; });
+$parcel$export(module.exports, "ListItem", function () { return $643eb70d8c2c1db5$export$2e2bcd8739ae039; });
 
 
 var $dc5d809e961b599a$var$Blockquote = function(props) {
@@ -674,6 +677,122 @@ function $2a43c772779de585$var$JapanMap(props) {
     });
 }
 var $2a43c772779de585$export$2e2bcd8739ae039 = $2a43c772779de585$var$JapanMap;
+
+
+
+
+
+
+
+var $1efe406630024670$export$28e6b9b82ee883c = (0, $kRA3g$tssreactmui.makeStyles)({
+    name: "ListItem"
+})(function(theme) {
+    return {
+        url: {
+            textDecoration: "none",
+            whiteSpace: "nowrap",
+            lineHeight: "45px",
+            color: "#585858",
+            display: "flex"
+        },
+        title: {
+            color: "#585858",
+            flex: "1 1 auto",
+            overflow: "hidden",
+            textOverflow: "ellipsis"
+        },
+        number: {
+            flex: "0 0 25px",
+            marginRight: "2px",
+            width: "25px",
+            fontSize: "21px",
+            fontWeight: "bold",
+            color: theme.palette.primary.main,
+            textAlign: "center"
+        },
+        listItem: {
+            listStyleType: "none",
+            height: "45px",
+            borderBottom: "1px dotted #bfbfbf"
+        }
+    };
+});
+
+
+var $643eb70d8c2c1db5$var$ListItem = function(props) {
+    var number = props.number, title = props.title, url = props.url;
+    var _useStyles = (0, $1efe406630024670$export$28e6b9b82ee883c)(), classes = _useStyles.classes, cx = _useStyles.cx;
+    return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("li", {
+        className: cx(classes.listItem),
+        children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)((0, $9cdc15315f7c2b11$export$2e2bcd8739ae039), {
+            url: url,
+            className: cx(classes.url),
+            children: [
+                /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("b", {
+                    className: cx(classes.number),
+                    children: number
+                }),
+                /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("span", {
+                    className: cx(classes.title),
+                    children: title
+                })
+            ]
+        })
+    });
+};
+var $643eb70d8c2c1db5$export$2e2bcd8739ae039 = $643eb70d8c2c1db5$var$ListItem;
+
+
+
+var $bfdcb8ef6426edb8$export$28e6b9b82ee883c = (0, $kRA3g$tssreactmui.makeStyles)({
+    name: "List"
+})(function() {
+    return {
+        topic: {
+            margin: "0",
+            padding: "0 0 0 28px",
+            display: "flex",
+            boxSizing: "border-box",
+            justifyContent: "space-between",
+            height: "32px",
+            position: "relative",
+            borderBottom: "2px solid #dadada",
+            lineHeight: "30px",
+            background: "no-repeat left center"
+        },
+        content: {
+            border: "2px solid #dadada",
+            borderTop: "0 none",
+            padding: "16px 25px 15px"
+        }
+    };
+});
+
+
+var $a115ed1cf3bff1f5$var$List = function(props) {
+    var listItems = props.listItems, topic = props.topic;
+    var _useStyles = (0, $bfdcb8ef6426edb8$export$28e6b9b82ee883c)(), classes = _useStyles.classes, cx = _useStyles.cx;
+    return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)("div", {
+        id: "hotnews",
+        className: "block",
+        children: [
+            /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("h2", {
+                className: cx(classes.topic),
+                children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("span", {
+                    children: topic
+                })
+            }),
+            /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("div", {
+                className: cx(classes.content),
+                children: listItems.map(function(item, index) {
+                    return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $643eb70d8c2c1db5$export$2e2bcd8739ae039), (0, ($parcel$interopDefault($kRA3g$swchelperslib_object_spreadjs)))({}, item), index);
+                })
+            })
+        ]
+    });
+};
+var $a115ed1cf3bff1f5$export$2e2bcd8739ae039 = $a115ed1cf3bff1f5$var$List;
+
 
 
 

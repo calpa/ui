@@ -15,6 +15,7 @@ import $4dtzN$muimaterialLink from "@mui/material/Link";
 import $4dtzN$muimaterialTextField from "@mui/material/TextField";
 import $4dtzN$muimaterialTypography from "@mui/material/Typography";
 import $4dtzN$svgjapansrc_coreclass from "svg-japan/src/_core-class";
+import {makeStyles as $4dtzN$makeStyles} from "tss-react/mui";
 
 
 
@@ -641,5 +642,116 @@ var $12801aec61afc308$export$2e2bcd8739ae039 = $12801aec61afc308$var$JapanMap;
 
 
 
-export {$3c428f9ab394f367$export$2e2bcd8739ae039 as Blockquote, $5239fd20ec9f31f3$export$2e2bcd8739ae039 as Button, $616c692299a75f89$export$2e2bcd8739ae039 as Card, $59a70b0d3de6e811$export$2e2bcd8739ae039 as Date, $046e9d052206d34f$export$2e2bcd8739ae039 as Footer, $c7932d61ef8b8d14$export$2e2bcd8739ae039 as GithubCorner, $4df044613c4d8e22$export$2e2bcd8739ae039 as NavBar, $491d5f8cba17e554$export$2e2bcd8739ae039 as SignIn, $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039 as Tag, $12801aec61afc308$export$2e2bcd8739ae039 as JapanMap};
+
+
+const $9f5b9e0d41047128$export$28e6b9b82ee883c = (0, $4dtzN$makeStyles)({
+    name: "ListItem"
+})((theme)=>({
+        url: {
+            textDecoration: "none",
+            whiteSpace: "nowrap",
+            lineHeight: "45px",
+            color: "#585858",
+            display: "flex"
+        },
+        title: {
+            color: "#585858",
+            flex: "1 1 auto",
+            overflow: "hidden",
+            textOverflow: "ellipsis"
+        },
+        number: {
+            flex: "0 0 25px",
+            marginRight: "2px",
+            width: "25px",
+            fontSize: "21px",
+            fontWeight: "bold",
+            color: theme.palette.primary.main,
+            textAlign: "center"
+        },
+        listItem: {
+            listStyleType: "none",
+            height: `45px`,
+            borderBottom: `1px dotted #bfbfbf`
+        }
+    }));
+
+
+const $549c942270c6569d$var$ListItem = (props)=>{
+    const { number: number , title: title , url: url  } = props;
+    const { classes: classes , cx: cx  } = (0, $9f5b9e0d41047128$export$28e6b9b82ee883c)();
+    return /*#__PURE__*/ (0, $4dtzN$jsx)("li", {
+        className: cx(classes.listItem),
+        children: /*#__PURE__*/ (0, $4dtzN$jsxs)((0, $4dba5b0eac16741b$export$2e2bcd8739ae039), {
+            url: url,
+            className: cx(classes.url),
+            children: [
+                /*#__PURE__*/ (0, $4dtzN$jsx)("b", {
+                    className: cx(classes.number),
+                    children: number
+                }),
+                /*#__PURE__*/ (0, $4dtzN$jsx)("span", {
+                    className: cx(classes.title),
+                    children: title
+                })
+            ]
+        })
+    });
+};
+var $549c942270c6569d$export$2e2bcd8739ae039 = $549c942270c6569d$var$ListItem;
+
+
+
+const $41271ef438f10a90$export$28e6b9b82ee883c = (0, $4dtzN$makeStyles)({
+    name: "List"
+})(()=>({
+        topic: {
+            margin: "0",
+            padding: "0 0 0 28px",
+            display: "flex",
+            boxSizing: "border-box",
+            justifyContent: "space-between",
+            height: "32px",
+            position: "relative",
+            borderBottom: "2px solid #dadada",
+            lineHeight: "30px",
+            background: "no-repeat left center"
+        },
+        content: {
+            border: `2px solid #dadada`,
+            borderTop: `0 none`,
+            padding: `16px 25px 15px`
+        }
+    }));
+
+
+const $e0286b9fddaa70d5$var$List = (props)=>{
+    const { listItems: listItems , topic: topic  } = props;
+    const { classes: classes , cx: cx  } = (0, $41271ef438f10a90$export$28e6b9b82ee883c)();
+    return /*#__PURE__*/ (0, $4dtzN$jsxs)("div", {
+        id: "hotnews",
+        className: "block",
+        children: [
+            /*#__PURE__*/ (0, $4dtzN$jsx)("h2", {
+                className: cx(classes.topic),
+                children: /*#__PURE__*/ (0, $4dtzN$jsx)("span", {
+                    children: topic
+                })
+            }),
+            /*#__PURE__*/ (0, $4dtzN$jsx)("div", {
+                className: cx(classes.content),
+                children: listItems.map((item, index)=>/*#__PURE__*/ (0, $4dtzN$jsx)((0, $549c942270c6569d$export$2e2bcd8739ae039), {
+                        ...item
+                    }, index))
+            })
+        ]
+    });
+};
+var $e0286b9fddaa70d5$export$2e2bcd8739ae039 = $e0286b9fddaa70d5$var$List;
+
+
+
+
+
+export {$3c428f9ab394f367$export$2e2bcd8739ae039 as Blockquote, $5239fd20ec9f31f3$export$2e2bcd8739ae039 as Button, $616c692299a75f89$export$2e2bcd8739ae039 as Card, $59a70b0d3de6e811$export$2e2bcd8739ae039 as Date, $046e9d052206d34f$export$2e2bcd8739ae039 as Footer, $c7932d61ef8b8d14$export$2e2bcd8739ae039 as GithubCorner, $4df044613c4d8e22$export$2e2bcd8739ae039 as NavBar, $491d5f8cba17e554$export$2e2bcd8739ae039 as SignIn, $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039 as Tag, $12801aec61afc308$export$2e2bcd8739ae039 as JapanMap, $e0286b9fddaa70d5$export$2e2bcd8739ae039 as List, $549c942270c6569d$export$2e2bcd8739ae039 as ListItem};
 //# sourceMappingURL=module.js.map
