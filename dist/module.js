@@ -95,7 +95,8 @@ $cc13e3b1dd9d7ba1$var$Tag.defaultProps = {
 var $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039 = $cc13e3b1dd9d7ba1$var$Tag;
 
 
-const $616c692299a75f89$var$CustomCard = ({ onClick: onClick , title: title , description: description , date: date , moreText: moreText , tags: tags , Link: Link , showDateComponent: showDateComponent , showTagsComponent: showTagsComponent  })=>{
+const $616c692299a75f89$var$CustomCard = (props)=>{
+    const { onClick: onClick , title: title , description: description , date: date , moreText: moreText , tags: tags , Link: Link , showDateComponent: showDateComponent , showTagsComponent: showTagsComponent  } = props;
     return /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Card), {
         sx: {
             marginBottom: "10px"
@@ -109,18 +110,12 @@ const $616c692299a75f89$var$CustomCard = ({ onClick: onClick , title: title , de
                         alignItems: "flex-start",
                         justifyContent: "space-between",
                         children: [
-                            /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Grid), {
-                                item: true,
-                                xs: 6,
-                                sm: 10,
-                                children: /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
-                                    variant: "h1",
-                                    sx: {
-                                        textDecoration: "none",
-                                        textAlign: "justify"
-                                    },
-                                    children: title
-                                })
+                            /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
+                                variant: "h1",
+                                sx: {
+                                    textDecoration: "none"
+                                },
+                                children: title
                             }),
                             showDateComponent && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $59a70b0d3de6e811$export$2e2bcd8739ae039), {
                                 date: date
@@ -128,6 +123,9 @@ const $616c692299a75f89$var$CustomCard = ({ onClick: onClick , title: title , de
                         ]
                     }),
                     /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
+                        sx: {
+                            fontSize: `14px`
+                        },
                         children: description
                     }),
                     showTagsComponent && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Grid), {
@@ -324,17 +322,9 @@ var $c7932d61ef8b8d14$export$2e2bcd8739ae039 = $c7932d61ef8b8d14$var$GithubCorne
 
 
 
-let $4df044613c4d8e22$var$Color;
-(function(Color) {
-    Color["Default"] = "default";
-    Color["Inherit"] = "inherit";
-    Color["Primary"] = "primary";
-    Color["Secondary"] = "secondary";
-    Color["Transparent"] = "transparent";
-})($4df044613c4d8e22$var$Color || ($4df044613c4d8e22$var$Color = {}));
 function $4df044613c4d8e22$var$noop() {}
 function $4df044613c4d8e22$var$NavBar(props) {
-    const { navItemColor: navItemColor , pages: pages , avatarAlt: avatarAlt , avatarImage: avatarImage , title: title , color: color = $4df044613c4d8e22$var$Color.Default , onClick: onClick = $4df044613c4d8e22$var$noop , handleTitleClick: handleTitleClick = $4df044613c4d8e22$var$noop , position: position  } = props;
+    const { navItemColor: navItemColor , pages: pages , avatarAlt: avatarAlt , avatarImage: avatarImage , title: title , color: color , onClick: onClick , handleTitleClick: handleTitleClick , position: position  } = props;
     const [anchorElNav, setAnchorElNav] = (0, $4dtzN$useState)(null);
     const handleOpenNavMenu = (event)=>{
         setAnchorElNav(event.currentTarget);
@@ -481,6 +471,11 @@ function $4df044613c4d8e22$var$NavBar(props) {
     });
 }
 var $4df044613c4d8e22$export$2e2bcd8739ae039 = $4df044613c4d8e22$var$NavBar;
+$4df044613c4d8e22$var$NavBar.defaultProps = {
+    color: "default",
+    onClick: $4df044613c4d8e22$var$noop,
+    handleTitleClick: $4df044613c4d8e22$var$noop
+};
 
 
 

@@ -116,8 +116,8 @@ $29cb95a2a78028d8$var$Tag.defaultProps = {
 var $29cb95a2a78028d8$export$2e2bcd8739ae039 = $29cb95a2a78028d8$var$Tag;
 
 
-var $9d11b387092b23df$var$CustomCard = function(param) {
-    var onClick = param.onClick, title = param.title, description = param.description, date = param.date, moreText = param.moreText, tags = param.tags, Link = param.Link, showDateComponent = param.showDateComponent, showTagsComponent = param.showTagsComponent;
+var $9d11b387092b23df$var$CustomCard = function(props) {
+    var onClick = props.onClick, title = props.title, description = props.description, date = props.date, moreText = props.moreText, tags = props.tags, Link = props.Link, showDateComponent = props.showDateComponent, showTagsComponent = props.showTagsComponent;
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Card), {
         sx: {
             marginBottom: "10px"
@@ -131,18 +131,12 @@ var $9d11b387092b23df$var$CustomCard = function(param) {
                         alignItems: "flex-start",
                         justifyContent: "space-between",
                         children: [
-                            /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Grid), {
-                                item: true,
-                                xs: 6,
-                                sm: 10,
-                                children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
-                                    variant: "h1",
-                                    sx: {
-                                        textDecoration: "none",
-                                        textAlign: "justify"
-                                    },
-                                    children: title
-                                })
+                            /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
+                                variant: "h1",
+                                sx: {
+                                    textDecoration: "none"
+                                },
+                                children: title
                             }),
                             showDateComponent && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $5f2b0527349d74dd$export$2e2bcd8739ae039), {
                                 date: date
@@ -150,6 +144,9 @@ var $9d11b387092b23df$var$CustomCard = function(param) {
                         ]
                     }),
                     /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
+                        sx: {
+                            fontSize: "14px"
+                        },
                         children: description
                     }),
                     showTagsComponent && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Grid), {
@@ -356,17 +353,9 @@ var $91fb128693f0a15d$export$2e2bcd8739ae039 = $91fb128693f0a15d$var$GithubCorne
 
 
 
-var $ed57b44d1f79d01b$var$Color;
-(function(Color) {
-    Color["Default"] = "default";
-    Color["Inherit"] = "inherit";
-    Color["Primary"] = "primary";
-    Color["Secondary"] = "secondary";
-    Color["Transparent"] = "transparent";
-})($ed57b44d1f79d01b$var$Color || ($ed57b44d1f79d01b$var$Color = {}));
 function $ed57b44d1f79d01b$var$noop() {}
 function $ed57b44d1f79d01b$var$NavBar(props) {
-    var navItemColor = props.navItemColor, pages = props.pages, avatarAlt = props.avatarAlt, avatarImage = props.avatarImage, title = props.title, _props_color = props.color, color = _props_color === void 0 ? $ed57b44d1f79d01b$var$Color.Default : _props_color, _props_onClick = props.onClick, onClick = _props_onClick === void 0 ? $ed57b44d1f79d01b$var$noop : _props_onClick, _props_handleTitleClick = props.handleTitleClick, handleTitleClick = _props_handleTitleClick === void 0 ? $ed57b44d1f79d01b$var$noop : _props_handleTitleClick, position = props.position;
+    var navItemColor = props.navItemColor, pages = props.pages, avatarAlt = props.avatarAlt, avatarImage = props.avatarImage, title = props.title, color = props.color, onClick = props.onClick, handleTitleClick = props.handleTitleClick, position = props.position;
     var _useState = (0, ($parcel$interopDefault($kRA3g$swchelperslib_sliced_to_arrayjs)))((0, $kRA3g$react.useState)(null), 2), anchorElNav = _useState[0], setAnchorElNav = _useState[1];
     var handleOpenNavMenu = function(event) {
         setAnchorElNav(event.currentTarget);
@@ -517,6 +506,11 @@ function $ed57b44d1f79d01b$var$NavBar(props) {
     });
 }
 var $ed57b44d1f79d01b$export$2e2bcd8739ae039 = $ed57b44d1f79d01b$var$NavBar;
+$ed57b44d1f79d01b$var$NavBar.defaultProps = {
+    color: "default",
+    onClick: $ed57b44d1f79d01b$var$noop,
+    handleTitleClick: $ed57b44d1f79d01b$var$noop
+};
 
 
 
