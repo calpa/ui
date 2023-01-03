@@ -1,7 +1,7 @@
 import "./index.css";
 import {jsx as $4dtzN$jsx, jsxs as $4dtzN$jsxs} from "react/jsx-runtime";
 import {useState as $4dtzN$useState, useRef as $4dtzN$useRef, useEffect as $4dtzN$useEffect} from "react";
-import {Button as $4dtzN$Button, Card as $4dtzN$Card, CardActionArea as $4dtzN$CardActionArea, CardContent as $4dtzN$CardContent, Grid as $4dtzN$Grid, Typography as $4dtzN$Typography, Link as $4dtzN$Link, List as $4dtzN$List, ListItem as $4dtzN$ListItem, AppBar as $4dtzN$AppBar, Container as $4dtzN$Container, Toolbar as $4dtzN$Toolbar, Box as $4dtzN$Box, IconButton as $4dtzN$IconButton, Menu as $4dtzN$Menu, MenuItem as $4dtzN$MenuItem, Tooltip as $4dtzN$Tooltip, Avatar as $4dtzN$Avatar} from "@mui/material";
+import {Button as $4dtzN$Button, Card as $4dtzN$Card, CardActionArea as $4dtzN$CardActionArea, CardContent as $4dtzN$CardContent, Typography as $4dtzN$Typography, Grid as $4dtzN$Grid, Link as $4dtzN$Link, List as $4dtzN$List, ListItem as $4dtzN$ListItem, AppBar as $4dtzN$AppBar, Container as $4dtzN$Container, Toolbar as $4dtzN$Toolbar, Box as $4dtzN$Box, IconButton as $4dtzN$IconButton, Menu as $4dtzN$Menu, MenuItem as $4dtzN$MenuItem, Tooltip as $4dtzN$Tooltip, Avatar as $4dtzN$Avatar} from "@mui/material";
 import {map as $4dtzN$map} from "lodash";
 import $4dtzN$muiiconsmaterialMenu from "@mui/icons-material/Menu";
 import $4dtzN$muiiconsmaterialLockOutlined from "@mui/icons-material/LockOutlined";
@@ -56,26 +56,6 @@ var $5239fd20ec9f31f3$export$2e2bcd8739ae039 = $5239fd20ec9f31f3$var$CustomButto
 
 
 
-const $59a70b0d3de6e811$var$Date = (props)=>{
-    const { date: date  } = props;
-    if (!date) return null;
-    return /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
-        sx: {
-            backgroundColor: "blue.main",
-            color: "#fff",
-            padding: "10px",
-            width: "110px",
-            textAlign: "center",
-            fontSize: `16px`
-        },
-        children: date
-    });
-};
-var $59a70b0d3de6e811$export$2e2bcd8739ae039 = $59a70b0d3de6e811$var$Date;
-
-
-
-
 const $cc13e3b1dd9d7ba1$var$Tag = ({ tag: tag , Link: Link = "a"  })=>{
     // Check if the Link prop is an "a" tag
     const isAnchor = Link === "a"; // Will be true if Link is an "a" tag
@@ -105,22 +85,19 @@ const $616c692299a75f89$var$CustomCard = (props)=>{
         children: /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$CardActionArea), {
             children: /*#__PURE__*/ (0, $4dtzN$jsxs)((0, $4dtzN$CardContent), {
                 children: [
-                    /*#__PURE__*/ (0, $4dtzN$jsxs)((0, $4dtzN$Grid), {
-                        container: true,
-                        alignItems: "flex-start",
-                        justifyContent: "space-between",
-                        children: [
-                            /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
-                                variant: "h1",
-                                sx: {
-                                    textDecoration: "none"
-                                },
-                                children: title
-                            }),
-                            showDateComponent && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $59a70b0d3de6e811$export$2e2bcd8739ae039), {
-                                date: date
-                            })
-                        ]
+                    /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
+                        variant: "h1",
+                        sx: {
+                            textDecoration: "none"
+                        },
+                        children: title
+                    }),
+                    showDateComponent && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
+                        sx: {
+                            fontSize: "14px",
+                            color: "#585858"
+                        },
+                        children: date
                     }),
                     /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
                         sx: {
@@ -155,6 +132,25 @@ $616c692299a75f89$var$CustomCard.defaultProps = {
 };
 var $616c692299a75f89$export$2e2bcd8739ae039 = $616c692299a75f89$var$CustomCard;
 
+
+
+
+const $59a70b0d3de6e811$var$Date = (props)=>{
+    const { date: date  } = props;
+    if (!date) return null;
+    return /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
+        sx: {
+            backgroundColor: "blue.main",
+            color: "#fff",
+            padding: "10px",
+            width: "110px",
+            textAlign: "center",
+            fontSize: `16px`
+        },
+        children: date
+    });
+};
+var $59a70b0d3de6e811$export$2e2bcd8739ae039 = $59a70b0d3de6e811$var$Date;
 
 
 

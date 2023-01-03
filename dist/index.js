@@ -76,26 +76,6 @@ var $d9fd4d1486bbea23$export$2e2bcd8739ae039 = $d9fd4d1486bbea23$var$CustomButto
 
 
 
-var $5f2b0527349d74dd$var$Date = function(props) {
-    var date = props.date;
-    if (!date) return null;
-    return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
-        sx: {
-            backgroundColor: "blue.main",
-            color: "#fff",
-            padding: "10px",
-            width: "110px",
-            textAlign: "center",
-            fontSize: "16px"
-        },
-        children: date
-    });
-};
-var $5f2b0527349d74dd$export$2e2bcd8739ae039 = $5f2b0527349d74dd$var$Date;
-
-
-
-
 
 
 
@@ -126,22 +106,19 @@ var $9d11b387092b23df$var$CustomCard = function(props) {
         children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.CardActionArea), {
             children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)((0, $kRA3g$muimaterial.CardContent), {
                 children: [
-                    /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)((0, $kRA3g$muimaterial.Grid), {
-                        container: true,
-                        alignItems: "flex-start",
-                        justifyContent: "space-between",
-                        children: [
-                            /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
-                                variant: "h1",
-                                sx: {
-                                    textDecoration: "none"
-                                },
-                                children: title
-                            }),
-                            showDateComponent && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $5f2b0527349d74dd$export$2e2bcd8739ae039), {
-                                date: date
-                            })
-                        ]
+                    /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
+                        variant: "h1",
+                        sx: {
+                            textDecoration: "none"
+                        },
+                        children: title
+                    }),
+                    showDateComponent && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
+                        sx: {
+                            fontSize: "14px",
+                            color: "#585858"
+                        },
+                        children: date
                     }),
                     /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
                         sx: {
@@ -178,6 +155,25 @@ $9d11b387092b23df$var$CustomCard.defaultProps = {
 };
 var $9d11b387092b23df$export$2e2bcd8739ae039 = $9d11b387092b23df$var$CustomCard;
 
+
+
+
+var $5f2b0527349d74dd$var$Date = function(props) {
+    var date = props.date;
+    if (!date) return null;
+    return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
+        sx: {
+            backgroundColor: "blue.main",
+            color: "#fff",
+            padding: "10px",
+            width: "110px",
+            textAlign: "center",
+            fontSize: "16px"
+        },
+        children: date
+    });
+};
+var $5f2b0527349d74dd$export$2e2bcd8739ae039 = $5f2b0527349d74dd$var$Date;
 
 
 
