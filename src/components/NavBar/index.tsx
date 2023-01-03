@@ -14,25 +14,7 @@ import {
   Typography,
 } from "@mui/material";
 
-enum Color {
-  Default = "default",
-  Inherit = "inherit",
-  Primary = "primary",
-  Secondary = "secondary",
-  Transparent = "transparent",
-}
-
-type NavBarProps = {
-  pages: string[];
-  avatarAlt: string;
-  avatarImage: string;
-  title: string;
-  color: Color;
-  navItemColor: string;
-  onClick?: (event: BaseSyntheticEvent) => void;
-  handleTitleClick?: (event: BaseSyntheticEvent) => void;
-  position?: "fixed" | "absolute" | "sticky" | "static" | "relative";
-};
+import { NavBarProps } from "./navbar";
 
 function noop() {}
 
@@ -43,9 +25,9 @@ function NavBar(props: NavBarProps) {
     avatarAlt,
     avatarImage,
     title,
-    color = Color.Default,
-    onClick = noop,
-    handleTitleClick = noop,
+    color,
+    onClick,
+    handleTitleClick,
     position,
   } = props;
 
@@ -112,7 +94,7 @@ function NavBar(props: NavBarProps) {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {pages.map((page: string) => (
                 <MenuItem key={page} onClick={handleNavItemClick}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
@@ -138,7 +120,7 @@ function NavBar(props: NavBarProps) {
             {title}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {pages.map((page: string) => (
               <Button
                 key={page}
                 onClick={handleNavItemClick}
@@ -165,3 +147,9 @@ function NavBar(props: NavBarProps) {
   );
 }
 export default NavBar;
+
+NavBar.defaultProps = {
+  color: "default",
+  onClick: noop,
+  handleTitleClick: noop,
+};

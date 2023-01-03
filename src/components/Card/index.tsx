@@ -10,17 +10,19 @@ import Date from "../Date";
 import Tag from "../Tag";
 import { CustomCardProps } from "./card";
 
-const CustomCard = ({
-  onClick,
-  title,
-  description,
-  date,
-  moreText,
-  tags,
-  Link,
-  showDateComponent,
-  showTagsComponent,
-}: CustomCardProps) => {
+const CustomCard = (props: CustomCardProps) => {
+  const {
+    onClick,
+    title,
+    description,
+    date,
+    moreText,
+    tags,
+    Link,
+    showDateComponent,
+    showTagsComponent,
+  } = props;
+
   return (
     <Card
       sx={{
@@ -35,20 +37,23 @@ const CustomCard = ({
             alignItems="flex-start"
             justifyContent="space-between"
           >
-            <Grid item xs={6} sm={10}>
-              <Typography
-                variant="h1"
-                sx={{
-                  textDecoration: "none",
-                  textAlign: "justify",
-                }}
-              >
-                {title}
-              </Typography>
-            </Grid>
+            <Typography
+              variant="h1"
+              sx={{
+                textDecoration: "none",
+              }}
+            >
+              {title}
+            </Typography>
             {showDateComponent && <Date date={date} />}
           </Grid>
-          <Typography>{description}</Typography>
+          <Typography
+            sx={{
+              fontSize: `14px`,
+            }}
+          >
+            {description}
+          </Typography>
           {showTagsComponent && (
             <Grid container item xs={12}>
               {map(tags, (tag) => (
