@@ -682,13 +682,14 @@ const $9f5b9e0d41047128$export$28e6b9b82ee883c = (0, $4dtzN$makeStyles)({
 
 
 const $549c942270c6569d$var$ListItem = (props)=>{
-    const { number: number , title: title , url: url  } = props;
+    const { number: number , title: title , url: url , Link: Link  } = props;
     const { classes: classes , cx: cx  } = (0, $9f5b9e0d41047128$export$28e6b9b82ee883c)();
     return /*#__PURE__*/ (0, $4dtzN$jsx)("li", {
         className: cx(classes.listItem),
         children: /*#__PURE__*/ (0, $4dtzN$jsxs)((0, $4dba5b0eac16741b$export$2e2bcd8739ae039), {
             url: url,
             className: cx(classes.url),
+            Link: Link,
             children: [
                 /*#__PURE__*/ (0, $4dtzN$jsx)("b", {
                     className: cx(classes.number),
@@ -734,7 +735,7 @@ const $41271ef438f10a90$export$28e6b9b82ee883c = (0, $4dtzN$makeStyles)({
 
 
 const $e0286b9fddaa70d5$var$List = (props)=>{
-    const { listItems: listItems , topic: topic  } = props;
+    const { listItems: listItems , topic: topic , Link: Link  } = props;
     const { classes: classes , cx: cx  } = (0, $41271ef438f10a90$export$28e6b9b82ee883c)();
     return /*#__PURE__*/ (0, $4dtzN$jsxs)("div", {
         className: cx(classes.container),
@@ -748,7 +749,8 @@ const $e0286b9fddaa70d5$var$List = (props)=>{
             /*#__PURE__*/ (0, $4dtzN$jsx)("div", {
                 className: cx(classes.content),
                 children: listItems.map((item, index)=>/*#__PURE__*/ (0, $4dtzN$jsx)((0, $549c942270c6569d$export$2e2bcd8739ae039), {
-                        ...item
+                        ...item,
+                        Link: Link
                     }, index))
             })
         ]

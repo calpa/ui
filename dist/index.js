@@ -684,6 +684,7 @@ var $2a43c772779de585$export$2e2bcd8739ae039 = $2a43c772779de585$var$JapanMap;
 
 
 
+
 var $1efe406630024670$export$28e6b9b82ee883c = (0, $kRA3g$tssreactmui.makeStyles)({
     name: "ListItem"
 })(function(theme) {
@@ -724,13 +725,14 @@ var $1efe406630024670$export$28e6b9b82ee883c = (0, $kRA3g$tssreactmui.makeStyles
 
 
 var $643eb70d8c2c1db5$var$ListItem = function(props) {
-    var number = props.number, title = props.title, url = props.url;
+    var number = props.number, title = props.title, url = props.url, Link = props.Link;
     var _useStyles = (0, $1efe406630024670$export$28e6b9b82ee883c)(), classes = _useStyles.classes, cx = _useStyles.cx;
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("li", {
         className: cx(classes.listItem),
         children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)((0, $9cdc15315f7c2b11$export$2e2bcd8739ae039), {
             url: url,
             className: cx(classes.url),
+            Link: Link,
             children: [
                 /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("b", {
                     className: cx(classes.number),
@@ -778,7 +780,7 @@ var $bfdcb8ef6426edb8$export$28e6b9b82ee883c = (0, $kRA3g$tssreactmui.makeStyles
 
 
 var $a115ed1cf3bff1f5$var$List = function(props) {
-    var listItems = props.listItems, topic = props.topic;
+    var listItems = props.listItems, topic = props.topic, Link = props.Link;
     var _useStyles = (0, $bfdcb8ef6426edb8$export$28e6b9b82ee883c)(), classes = _useStyles.classes, cx = _useStyles.cx;
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)("div", {
         className: cx(classes.container),
@@ -792,7 +794,9 @@ var $a115ed1cf3bff1f5$var$List = function(props) {
             /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)("div", {
                 className: cx(classes.content),
                 children: listItems.map(function(item, index) {
-                    return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $643eb70d8c2c1db5$export$2e2bcd8739ae039), (0, ($parcel$interopDefault($kRA3g$swchelperslib_object_spreadjs)))({}, item), index);
+                    return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $643eb70d8c2c1db5$export$2e2bcd8739ae039), (0, ($parcel$interopDefault($kRA3g$swchelperslib_object_spread_propsjs)))((0, ($parcel$interopDefault($kRA3g$swchelperslib_object_spreadjs)))({}, item), {
+                        Link: Link
+                    }), index);
                 })
             })
         ]
