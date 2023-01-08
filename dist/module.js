@@ -1,7 +1,7 @@
 import "./index.css";
 import {jsx as $4dtzN$jsx, jsxs as $4dtzN$jsxs} from "react/jsx-runtime";
 import {useState as $4dtzN$useState, useRef as $4dtzN$useRef, useEffect as $4dtzN$useEffect} from "react";
-import {Button as $4dtzN$Button, Card as $4dtzN$Card, CardActionArea as $4dtzN$CardActionArea, CardContent as $4dtzN$CardContent, Typography as $4dtzN$Typography, Grid as $4dtzN$Grid, Link as $4dtzN$Link, List as $4dtzN$List, ListItem as $4dtzN$ListItem, AppBar as $4dtzN$AppBar, Container as $4dtzN$Container, Toolbar as $4dtzN$Toolbar, Box as $4dtzN$Box, IconButton as $4dtzN$IconButton, Menu as $4dtzN$Menu, MenuItem as $4dtzN$MenuItem, Tooltip as $4dtzN$Tooltip, Avatar as $4dtzN$Avatar} from "@mui/material";
+import {Button as $4dtzN$Button, Card as $4dtzN$Card, CardActionArea as $4dtzN$CardActionArea, CardMedia as $4dtzN$CardMedia, CardContent as $4dtzN$CardContent, Typography as $4dtzN$Typography, Grid as $4dtzN$Grid, Link as $4dtzN$Link, List as $4dtzN$List, ListItem as $4dtzN$ListItem, AppBar as $4dtzN$AppBar, Container as $4dtzN$Container, Toolbar as $4dtzN$Toolbar, Box as $4dtzN$Box, IconButton as $4dtzN$IconButton, Menu as $4dtzN$Menu, MenuItem as $4dtzN$MenuItem, Tooltip as $4dtzN$Tooltip, Avatar as $4dtzN$Avatar} from "@mui/material";
 import {map as $4dtzN$map} from "lodash";
 import $4dtzN$muiiconsmaterialMenu from "@mui/icons-material/Menu";
 import $4dtzN$muiiconsmaterialLockOutlined from "@mui/icons-material/LockOutlined";
@@ -95,51 +95,56 @@ var $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039 = $cc13e3b1dd9d7ba1$var$Tag;
 
 
 const $616c692299a75f89$var$CustomCard = (props)=>{
-    const { onClick: onClick , title: title , description: description , date: date , moreText: moreText , tags: tags , Link: Link , showDateComponent: showDateComponent , showTagsComponent: showTagsComponent  } = props;
+    const { onClick: onClick , title: title , description: description , date: date , moreText: moreText , tags: tags , Link: Link , showDateComponent: showDateComponent , showTagsComponent: showTagsComponent , imageProps: imageProps  } = props;
     return /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Card), {
         sx: {
             marginBottom: "10px"
         },
         onClick: onClick,
-        children: /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$CardActionArea), {
-            children: /*#__PURE__*/ (0, $4dtzN$jsxs)((0, $4dtzN$CardContent), {
-                children: [
-                    /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
-                        variant: "h1",
-                        sx: {
-                            textDecoration: "none"
-                        },
-                        children: title
-                    }),
-                    showDateComponent && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
-                        sx: {
-                            fontSize: "14px",
-                            color: "#585858"
-                        },
-                        children: date
-                    }),
-                    /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
-                        sx: {
-                            fontSize: `14px`
-                        },
-                        children: description
-                    }),
-                    showTagsComponent && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Grid), {
-                        container: true,
-                        item: true,
-                        xs: 12,
-                        children: (0, $4dtzN$map)(tags, (tag)=>/*#__PURE__*/ (0, $4dtzN$jsx)((0, $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039), {
-                                tag: tag,
-                                Link: Link,
-                                children: tag
-                            }, tag))
-                    }),
-                    /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
-                        color: "blue.main",
-                        children: moreText
-                    })
-                ]
-            })
+        children: /*#__PURE__*/ (0, $4dtzN$jsxs)((0, $4dtzN$CardActionArea), {
+            children: [
+                imageProps && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$CardMedia), {
+                    ...imageProps
+                }),
+                /*#__PURE__*/ (0, $4dtzN$jsxs)((0, $4dtzN$CardContent), {
+                    children: [
+                        /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
+                            variant: "h1",
+                            sx: {
+                                textDecoration: "none"
+                            },
+                            children: title
+                        }),
+                        showDateComponent && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
+                            sx: {
+                                fontSize: "14px",
+                                color: "#585858"
+                            },
+                            children: date
+                        }),
+                        /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
+                            sx: {
+                                fontSize: `14px`
+                            },
+                            children: description
+                        }),
+                        showTagsComponent && /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Grid), {
+                            container: true,
+                            item: true,
+                            xs: 12,
+                            children: (0, $4dtzN$map)(tags, (tag)=>/*#__PURE__*/ (0, $4dtzN$jsx)((0, $cc13e3b1dd9d7ba1$export$2e2bcd8739ae039), {
+                                    tag: tag,
+                                    Link: Link,
+                                    children: tag
+                                }, tag))
+                        }),
+                        /*#__PURE__*/ (0, $4dtzN$jsx)((0, $4dtzN$Typography), {
+                            color: "blue.main",
+                            children: moreText
+                        })
+                    ]
+                })
+            ]
         })
     });
 };

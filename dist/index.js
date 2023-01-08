@@ -83,6 +83,7 @@ var $d9fd4d1486bbea23$export$2e2bcd8739ae039 = $d9fd4d1486bbea23$var$CustomButto
 
 
 
+
 var $9cdc15315f7c2b11$var$EnhancedLink = function(props) {
     var url = props.url, children = props.children, _props_Link = props.Link, Link = _props_Link === void 0 ? "a" : _props_Link, className = props.className;
     // Check if the Link prop is an "a" tag
@@ -118,53 +119,56 @@ var $29cb95a2a78028d8$export$2e2bcd8739ae039 = $29cb95a2a78028d8$var$Tag;
 
 
 var $9d11b387092b23df$var$CustomCard = function(props) {
-    var onClick = props.onClick, title = props.title, description = props.description, date = props.date, moreText = props.moreText, tags = props.tags, Link = props.Link, showDateComponent = props.showDateComponent, showTagsComponent = props.showTagsComponent;
+    var onClick = props.onClick, title = props.title, description = props.description, date = props.date, moreText = props.moreText, tags = props.tags, Link = props.Link, showDateComponent = props.showDateComponent, showTagsComponent = props.showTagsComponent, imageProps = props.imageProps;
     return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Card), {
         sx: {
             marginBottom: "10px"
         },
         onClick: onClick,
-        children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.CardActionArea), {
-            children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)((0, $kRA3g$muimaterial.CardContent), {
-                children: [
-                    /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
-                        variant: "h1",
-                        sx: {
-                            textDecoration: "none"
-                        },
-                        children: title
-                    }),
-                    showDateComponent && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
-                        sx: {
-                            fontSize: "14px",
-                            color: "#585858"
-                        },
-                        children: date
-                    }),
-                    /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
-                        sx: {
-                            fontSize: "14px"
-                        },
-                        children: description
-                    }),
-                    showTagsComponent && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Grid), {
-                        container: true,
-                        item: true,
-                        xs: 12,
-                        children: (0, $kRA3g$lodash.map)(tags, function(tag) {
-                            return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $29cb95a2a78028d8$export$2e2bcd8739ae039), {
-                                tag: tag,
-                                Link: Link,
-                                children: tag
-                            }, tag);
+        children: /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)((0, $kRA3g$muimaterial.CardActionArea), {
+            children: [
+                imageProps && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.CardMedia), (0, ($parcel$interopDefault($kRA3g$swchelperslib_object_spreadjs)))({}, imageProps)),
+                /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsxs)((0, $kRA3g$muimaterial.CardContent), {
+                    children: [
+                        /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
+                            variant: "h1",
+                            sx: {
+                                textDecoration: "none"
+                            },
+                            children: title
+                        }),
+                        showDateComponent && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
+                            sx: {
+                                fontSize: "14px",
+                                color: "#585858"
+                            },
+                            children: date
+                        }),
+                        /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
+                            sx: {
+                                fontSize: "14px"
+                            },
+                            children: description
+                        }),
+                        showTagsComponent && /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Grid), {
+                            container: true,
+                            item: true,
+                            xs: 12,
+                            children: (0, $kRA3g$lodash.map)(tags, function(tag) {
+                                return /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $29cb95a2a78028d8$export$2e2bcd8739ae039), {
+                                    tag: tag,
+                                    Link: Link,
+                                    children: tag
+                                }, tag);
+                            })
+                        }),
+                        /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
+                            color: "blue.main",
+                            children: moreText
                         })
-                    }),
-                    /*#__PURE__*/ (0, $kRA3g$reactjsxruntime.jsx)((0, $kRA3g$muimaterial.Typography), {
-                        color: "blue.main",
-                        children: moreText
-                    })
-                ]
-            })
+                    ]
+                })
+            ]
         })
     });
 };
