@@ -2,6 +2,7 @@ import {
   Card,
   CardActionArea,
   CardContent,
+  CardMedia,
   Grid,
   Typography,
 } from "@mui/material";
@@ -21,6 +22,7 @@ const CustomCard = (props: CustomCardProps) => {
     Link,
     showDateComponent,
     showTagsComponent,
+    imageProps,
   } = props;
 
   return (
@@ -31,6 +33,8 @@ const CustomCard = (props: CustomCardProps) => {
       onClick={onClick}
     >
       <CardActionArea>
+        {imageProps && <CardMedia {...imageProps} />}
+
         <CardContent>
           <Typography
             variant="h1"
