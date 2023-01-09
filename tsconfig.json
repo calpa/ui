@@ -14,7 +14,7 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "paths": {
-      "*": ["./src/types/*"]
+      "svg-japan/*": ["./src/types/svg-japan/*"]
     }
   },
   "include": ["./src/components/**/*"],

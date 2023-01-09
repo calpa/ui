@@ -1,11 +1,9 @@
 import { useEffect, useRef } from "react";
 
-import svgJapan, { svgJapanOptions } from "svg-japan/src/_core-class";
+import svgJapan from "svg-japan/src/_core-class";
+// import svgJapan, { svgJapanOptions } from "svg-japan/src/_core-class";
+import { JapanMapProps } from "./JapanMap";
 import "./index.css";
-
-type JapanMapProps = svgJapanOptions & {
-  onClick: (event: Event) => void;
-};
 
 function JapanMap(props: JapanMapProps) {
   const { onClick } = props;

@@ -1,3 +1,4 @@
+import { BaseSyntheticEvent } from "react";
 export enum Color {
   Default = "default",
   Inherit = "inherit",
