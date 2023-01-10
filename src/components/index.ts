@@ -10,3 +10,4 @@ export { default as Tag } from "./Tag";
 export { default as JapanMap } from "./JapanMap";
 export { default as List } from "./List";
 export { default as ListItem } from "./ListItem";
+export { default as Attraction } from "./Attraction";
