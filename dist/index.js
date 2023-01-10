@@ -591,13 +591,23 @@ var List2 = (props) => {
 };
 var List_default = List2;
 function Attraction(props) {
-  const { description, title, location, articles, image, Link: Link3 } = props;
+  const { description, title, location, articles, Image, Link: Link3 } = props;
   return /* @__PURE__ */ jsxRuntime.jsxs(material.Grid, { container: true, id: `attraction-${location}`, children: [
-    /* @__PURE__ */ jsxRuntime.jsxs(material.Typography, { variant: "h2", children: [
-      title,
-      "\uFF1A",
-      location
-    ] }),
+    /* @__PURE__ */ jsxRuntime.jsxs(
+      material.Typography,
+      {
+        variant: "h2",
+        sx: {
+          borderLeft: `5px solid red`,
+          paddingLeft: `10px`
+        },
+        children: [
+          title,
+          "\uFF1A",
+          location
+        ]
+      }
+    ),
     /* @__PURE__ */ jsxRuntime.jsxs(
       material.Grid,
       {
@@ -608,17 +618,7 @@ function Attraction(props) {
           }
         },
         children: [
-          /* @__PURE__ */ jsxRuntime.jsx(material.Grid, { item: true, xs: 12, sm: 3, children: /* @__PURE__ */ jsxRuntime.jsx(
-            "img",
-            {
-              src: image,
-              style: {
-                width: "100%",
-                height: "100%",
-                objectFit: "contain"
-              }
-            }
-          ) }),
+          /* @__PURE__ */ jsxRuntime.jsx(material.Grid, { item: true, xs: 12, sm: 3, children: /* @__PURE__ */ jsxRuntime.jsx(Image, {}) }),
           /* @__PURE__ */ jsxRuntime.jsxs(
             material.Grid,
             {
@@ -649,7 +649,8 @@ function Attraction(props) {
                     children: [
                       /* @__PURE__ */ jsxRuntime.jsxs(material.Typography, { children: [
                         "\u7ACB\u523B\u63A2\u7D22",
-                        location
+                        location,
+                        "\uFF01"
                       ] }),
                       /* @__PURE__ */ jsxRuntime.jsx(
                         "ul",
