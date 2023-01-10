@@ -7,7 +7,13 @@ export default {
   component: Attraction,
 };
 
-const Template = (args) => <Attraction {...args} />;
+function Image(props: any) {
+  return <img width="100%" {...props} />;
+}
+
+const Template = (args: any) => (
+  <Attraction {...args} Image={() => <Image src={args.image} />} />
+);
 
 export const Default = Template.bind({});
 
@@ -33,14 +39,15 @@ const mockData = {
 Default.args = mockData;
 
 export const List = (props) => {
-  return props.attractions.map((attraction, index) => {
+  return props.attractions.map((attraction: any, index: number) => {
     return (
       <Attraction
         title={attraction.title}
         location={attraction.location}
         description={attraction.description}
-        image={attraction.image}
+        Image={() => <Image src={attraction.image} />}
         articles={attraction.articles}
+        key={index}
       />
     );
   });

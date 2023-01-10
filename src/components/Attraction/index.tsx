@@ -12,16 +12,22 @@ type AttractionProps = {
   title: string;
   location: string;
   articles?: Article[];
-  image: string;
+  Image: any;
   Link?: React.ElementType;
 };
 
 function Attraction(props: AttractionProps) {
-  const { description, title, location, articles, image, Link } = props;
+  const { description, title, location, articles, Image, Link } = props;
 
   return (
     <Grid container id={`attraction-${location}`}>
-      <Typography variant="h2">
+      <Typography
+        variant="h2"
+        sx={{
+          borderLeft: `5px solid red`,
+          paddingLeft: `10px`,
+        }}
+      >
         {title}：{location}
       </Typography>
 
@@ -34,14 +40,7 @@ function Attraction(props: AttractionProps) {
         }}
       >
         <Grid item xs={12} sm={3}>
-          <img
-            src={image}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-            }}
-          />
+          <Image />
         </Grid>
 
         <Grid
@@ -71,7 +70,7 @@ function Attraction(props: AttractionProps) {
               },
             }}
           >
-            <Typography>立刻探索{location}</Typography>
+            <Typography>立刻探索{location}！</Typography>
             <ul
               style={{
                 paddingInlineStart: 0,
