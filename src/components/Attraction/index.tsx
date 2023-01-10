@@ -1,20 +1,6 @@
-import React from "react";
 import { Grid, Typography } from "@mui/material";
 import EnhancedLink from "../EnhancedLink";
-
-type Article = {
-  url: string;
-  title: string;
-};
-
-type AttractionProps = {
-  description: string;
-  title: string;
-  location: string;
-  articles?: Article[];
-  Image: any;
-  Link?: React.ElementType;
-};
+import type { AttractionProps } from "./Attraction";
 
 function Attraction(props: AttractionProps) {
   const { description, title, location, articles, Image, Link } = props;
@@ -39,9 +25,11 @@ function Attraction(props: AttractionProps) {
           },
         }}
       >
-        <Grid item xs={12} sm={3}>
-          <Image />
-        </Grid>
+        {Image !== undefined && (
+          <Grid item xs={12} sm={3}>
+            <Image />
+          </Grid>
+        )}
 
         <Grid
           container
@@ -66,7 +54,6 @@ function Attraction(props: AttractionProps) {
             sx={{
               marginTop: {
                 xs: `10px`,
-                // sm: `0`
               },
             }}
           >
@@ -74,6 +61,7 @@ function Attraction(props: AttractionProps) {
             <ul
               style={{
                 paddingInlineStart: 0,
+                listStyleType: `none`,
               }}
             >
               {articles &&
