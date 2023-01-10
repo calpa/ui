@@ -18,3 +18,22 @@ export type NavBarProps = {
   handleTitleClick?: (event: BaseSyntheticEvent) => void;
   position?: "fixed" | "absolute" | "sticky" | "static" | "relative";
 };
+
+declare module "@mui/material/AppBar" {
+  interface AppBarPropsColorOverrides {
+    blue: true;
+    navbar: true;
+  }
+}
+
+declare module "@mui/material/styles" {
+  interface Palette {
+    blue: Palette["primary"];
+    navbar: Palette["primary"];
+  }
+
+  interface PaletteOptions {
+    blue: PaletteOptions["primary"];
+    navbar: PaletteOptions["primary"];
+  }
+}

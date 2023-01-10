@@ -25,7 +25,6 @@ function NavBar(props: NavBarProps) {
     avatarAlt,
     avatarImage,
     title,
-    color,
     onClick,
     handleTitleClick,
     position,
@@ -43,7 +42,7 @@ function NavBar(props: NavBarProps) {
   };
 
   return (
-    <AppBar color={color} position={position}>
+    <AppBar color="navbar" position={position}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -96,7 +95,9 @@ function NavBar(props: NavBarProps) {
             >
               {pages.map((page: string) => (
                 <MenuItem key={page} onClick={handleNavItemClick}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" color="navbar.contrastColor">
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -124,7 +125,12 @@ function NavBar(props: NavBarProps) {
               <Button
                 key={page}
                 onClick={handleNavItemClick}
-                sx={{ color: navItemColor, display: "block" }}
+                sx={{
+                  display: "block",
+                  color: (theme) =>
+                    theme.palette.getContrastText(theme.palette.navbar.main),
+                }}
+                // color="navbar.contrastText"
                 id={`blog-nav-item-${page}`}
               >
                 {page}
