@@ -590,7 +590,93 @@ var List2 = (props) => {
   ] });
 };
 var List_default = List2;
+function Attraction(props) {
+  const { description, title, location, articles, image, Link: Link3 } = props;
+  return /* @__PURE__ */ jsxRuntime.jsxs(material.Grid, { container: true, id: `attraction-${location}`, children: [
+    /* @__PURE__ */ jsxRuntime.jsxs(material.Typography, { variant: "h2", children: [
+      title,
+      "\uFF1A",
+      location
+    ] }),
+    /* @__PURE__ */ jsxRuntime.jsxs(
+      material.Grid,
+      {
+        container: true,
+        sx: {
+          marginTop: {
+            sm: `10px`
+          }
+        },
+        children: [
+          /* @__PURE__ */ jsxRuntime.jsx(material.Grid, { item: true, xs: 12, sm: 3, children: /* @__PURE__ */ jsxRuntime.jsx(
+            "img",
+            {
+              src: image,
+              style: {
+                width: "100%",
+                height: "100%",
+                objectFit: "contain"
+              }
+            }
+          ) }),
+          /* @__PURE__ */ jsxRuntime.jsxs(
+            material.Grid,
+            {
+              container: true,
+              xs: true,
+              sm: true,
+              sx: {
+                marginLeft: {
+                  sm: `10px`
+                },
+                marginTop: {
+                  xs: `10px`,
+                  sm: `0`
+                }
+              },
+              children: [
+                /* @__PURE__ */ jsxRuntime.jsx(material.Grid, { item: true, xs: 12, children: /* @__PURE__ */ jsxRuntime.jsx(material.Typography, { variant: "body1", children: description }) }),
+                /* @__PURE__ */ jsxRuntime.jsxs(
+                  material.Grid,
+                  {
+                    item: true,
+                    xs: 12,
+                    sx: {
+                      marginTop: {
+                        xs: `10px`
+                      }
+                    },
+                    children: [
+                      /* @__PURE__ */ jsxRuntime.jsxs(material.Typography, { children: [
+                        "\u7ACB\u523B\u63A2\u7D22",
+                        location
+                      ] }),
+                      /* @__PURE__ */ jsxRuntime.jsx(
+                        "ul",
+                        {
+                          style: {
+                            paddingInlineStart: 0
+                          },
+                          children: articles && articles.map((article, index) => /* @__PURE__ */ jsxRuntime.jsx("li", { children: /* @__PURE__ */ jsxRuntime.jsx(EnhancedLink_default, { url: article.url, className: "", Link: Link3, children: article.title }) }, index))
+                        }
+                      )
+                    ]
+                  }
+                )
+              ]
+            }
+          )
+        ]
+      }
+    )
+  ] });
+}
+var Attraction_default = Attraction;
+Attraction.defaultProps = {
+  articles: []
+};
 
+exports.Attraction = Attraction_default;
 exports.Blockquote = Blockquote_default;
 exports.Button = Button_default;
 exports.Card = Card_default;
