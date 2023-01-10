@@ -309,7 +309,6 @@ function NavBar(props) {
     avatarAlt,
     avatarImage,
     title,
-    color,
     onClick,
     handleTitleClick,
     position
@@ -322,7 +321,7 @@ function NavBar(props) {
     setAnchorElNav(null);
     onClick && onClick(event);
   };
-  return /* @__PURE__ */ jsxRuntime.jsx(material.AppBar, { color, position, children: /* @__PURE__ */ jsxRuntime.jsx(material.Container, { maxWidth: "xl", children: /* @__PURE__ */ jsxRuntime.jsxs(material.Toolbar, { disableGutters: true, children: [
+  return /* @__PURE__ */ jsxRuntime.jsx(material.AppBar, { color: "navbar", position, children: /* @__PURE__ */ jsxRuntime.jsx(material.Container, { maxWidth: "xl", children: /* @__PURE__ */ jsxRuntime.jsxs(material.Toolbar, { disableGutters: true, children: [
     /* @__PURE__ */ jsxRuntime.jsx(
       material.Typography,
       {
@@ -375,7 +374,7 @@ function NavBar(props) {
           sx: {
             display: { xs: "block", md: "none" }
           },
-          children: pages.map((page) => /* @__PURE__ */ jsxRuntime.jsx(material.MenuItem, { onClick: handleNavItemClick, children: /* @__PURE__ */ jsxRuntime.jsx(material.Typography, { textAlign: "center", children: page }) }, page))
+          children: pages.map((page) => /* @__PURE__ */ jsxRuntime.jsx(material.MenuItem, { onClick: handleNavItemClick, children: /* @__PURE__ */ jsxRuntime.jsx(material.Typography, { textAlign: "center", color: "navbar.contrastColor", children: page }) }, page))
         }
       )
     ] }),
@@ -403,7 +402,10 @@ function NavBar(props) {
       material.Button,
       {
         onClick: handleNavItemClick,
-        sx: { color: navItemColor, display: "block" },
+        sx: {
+          display: "block",
+          color: (theme) => theme.palette.getContrastText(theme.palette.navbar.main)
+        },
         id: `blog-nav-item-${page}`,
         children: page
       },
