@@ -17,6 +17,7 @@ var TextField = require('@mui/material/TextField');
 var Typography5 = require('@mui/material/Typography');
 var svgJapan = require('svg-japan/src/_core-class');
 var mui = require('tss-react/mui');
+var colors = require('@mui/material/colors');
 
 var __defProp = Object.defineProperty;
 var __defProps = Object.defineProperties;
@@ -620,7 +621,7 @@ function Attraction(props) {
           }
         },
         children: [
-          /* @__PURE__ */ jsxRuntime.jsx(material.Grid, { item: true, xs: 12, sm: 3, children: /* @__PURE__ */ jsxRuntime.jsx(Image, {}) }),
+          Image !== void 0 && /* @__PURE__ */ jsxRuntime.jsx(material.Grid, { item: true, xs: 12, sm: 3, children: /* @__PURE__ */ jsxRuntime.jsx(Image, {}) }),
           /* @__PURE__ */ jsxRuntime.jsxs(
             material.Grid,
             {
@@ -658,7 +659,8 @@ function Attraction(props) {
                         "ul",
                         {
                           style: {
-                            paddingInlineStart: 0
+                            paddingInlineStart: 0,
+                            listStyleType: `none`
                           },
                           children: articles && articles.map((article, index) => /* @__PURE__ */ jsxRuntime.jsx("li", { children: /* @__PURE__ */ jsxRuntime.jsx(EnhancedLink_default, { url: article.url, className: "", Link: Link3, children: article.title }) }, index))
                         }
@@ -679,6 +681,84 @@ Attraction.defaultProps = {
   articles: []
 };
 
+// src/themes/typography.ts
+var typographyOptions = {
+  fontSize: 16,
+  h1: {
+    fontSize: 24,
+    fontWeight: 600
+  },
+  h2: {
+    fontSize: 22,
+    fontWeight: 600
+  },
+  h3: {
+    fontSize: 20,
+    fontWeight: 600
+  },
+  h4: {
+    fontSize: 18,
+    fontWeight: 600
+  },
+  h5: {
+    fontSize: 16,
+    fontWeight: 600
+  }
+};
+var typography_default = typographyOptions;
+
+// src/themes/dark.theme.ts
+var darkTheme = material.createTheme({
+  typography: typography_default,
+  palette: {
+    mode: "dark",
+    navbar: {
+      main: "#f5f5f5"
+    },
+    blue: {
+      light: "#337ab7",
+      main: "#0056b3",
+      dark: "#0f457f"
+    },
+    primary: {
+      main: colors.pink["A200"]
+    },
+    secondary: {
+      main: colors.cyan["A400"]
+    },
+    background: {
+      default: colors.blueGrey["800"],
+      paper: colors.blueGrey["700"]
+    }
+  }
+});
+var lightTheme = material.createTheme({
+  typography: typography_default,
+  palette: {
+    mode: "light",
+    navbar: {
+      main: "#f5f5f5"
+    },
+    blue: {
+      light: "#337ab7",
+      main: "#0056b3",
+      dark: "#0f457f"
+    },
+    primary: {
+      main: `#81C7D4`
+    },
+    secondary: {
+      main: `#faf7a1`
+    },
+    error: {
+      main: `#CB1B45`
+    },
+    success: {
+      main: `#BEC23F`
+    }
+  }
+});
+
 exports.Attraction = Attraction_default;
 exports.Blockquote = Blockquote_default;
 exports.Button = Button_default;
@@ -692,5 +772,7 @@ exports.ListItem = ListItem_default;
 exports.NavBar = NavBar_default;
 exports.SignIn = SignIn_default;
 exports.Tag = Tag_default;
+exports.darkTheme = darkTheme;
+exports.lightTheme = lightTheme;
 //# sourceMappingURL=out.js.map
 //# sourceMappingURL=index.js.map
