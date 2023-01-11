@@ -626,6 +626,7 @@ function Attraction(props) {
             material.Grid,
             {
               container: true,
+              item: true,
               xs: true,
               sm: true,
               sx: {
@@ -684,6 +685,16 @@ Attraction.defaultProps = {
 // src/themes/typography.ts
 var typographyOptions = {
   fontSize: 16,
+  fontFamily: [
+    '"Noto Serif JP"',
+    "Roboto",
+    '"Helvetica Neue"',
+    "Arial",
+    "sans-serif",
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"'
+  ].join(","),
   h1: {
     fontSize: 24,
     fontWeight: 600
