@@ -2,6 +2,16 @@ import { TypographyOptions } from "@mui/material/styles/createTypography";
 
 const typographyOptions: TypographyOptions = {
   fontSize: 16,
+  fontFamily: [
+    '"Noto Serif JP"',
+    "Roboto",
+    '"Helvetica Neue"',
+    "Arial",
+    "sans-serif",
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+  ].join(","),
   h1: {
     fontSize: 24,
     fontWeight: 600,

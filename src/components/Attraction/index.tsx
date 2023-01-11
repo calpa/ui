@@ -33,6 +33,7 @@ function Attraction(props: AttractionProps) {
 
         <Grid
           container
+          item
           xs
           sm
           sx={{
