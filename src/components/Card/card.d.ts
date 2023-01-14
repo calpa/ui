@@ -8,4 +8,5 @@ export type CustomCardProps = {
   Link: any;
   showDateComponent?: boolean;
   showTagsComponent?: boolean;
+  imageProps?: any;
 };

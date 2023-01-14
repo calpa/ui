@@ -2,11 +2,12 @@ import {
   Card,
   CardActionArea,
   CardContent,
+  CardMedia,
   Grid,
   Typography,
 } from "@mui/material";
 import { map } from "lodash";
-import Date from "../Date";
+// import Date from "../Date";
 import Tag from "../Tag";
 import { CustomCardProps } from "./card";
 
@@ -21,6 +22,7 @@ const CustomCard = (props: CustomCardProps) => {
     Link,
     showDateComponent,
     showTagsComponent,
+    imageProps,
   } = props;
 
   return (
@@ -31,22 +33,27 @@ const CustomCard = (props: CustomCardProps) => {
       onClick={onClick}
     >
       <CardActionArea>
+        {imageProps && <CardMedia {...imageProps} />}
+
         <CardContent>
-          <Grid
-            container
-            alignItems="flex-start"
-            justifyContent="space-between"
+          <Typography
+            variant="h1"
+            sx={{
+              textDecoration: "none",
+            }}
           >
+            {title}
+          </Typography>
+          {showDateComponent && (
             <Typography
-              variant="h1"
               sx={{
-                textDecoration: "none",
+                fontSize: "14px",
+                color: "#585858",
               }}
             >
-              {title}
+              {date}
             </Typography>
-            {showDateComponent && <Date date={date} />}
-          </Grid>
+          )}
           <Typography
             sx={{
               fontSize: `14px`,

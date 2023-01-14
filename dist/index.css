@@ -1,208 +1,307 @@
+@import "https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap";
+
+/* src/components/Tag/index.css */
 .tag {
   float: left;
   height: 26px;
-  color: #fff;
-  background: #0089e0;
-  border-radius: 0 4px 4px 0;
+  line-height: 24px;
+  position: relative;
+  font-size: 14px;
   margin: 5px 20px;
   padding: 0 10px 0 12px;
-  font-size: 14px;
-  line-height: 24px;
+  background: #0089e0;
+  color: #fff;
   text-decoration: none;
-  position: relative;
+  border-radius: 0 4px 4px 0;
 }
-
 .tag:before {
   content: "";
-  width: 0;
-  height: 0;
-  border-top: 12px solid rgba(0, 0, 0, 0);
-  border-bottom: 14px solid rgba(0, 0, 0, 0);
-  border-left: 0 solid rgba(0, 0, 0, 0);
-  border-right: 12px solid #0089e0;
   position: absolute;
   top: 0;
   left: -12px;
+  width: 0;
+  height: 0;
+  border-color: transparent #0089e0 transparent transparent;
+  border-style: solid;
+  border-width: 12px 12px 14px 0;
 }
-
 .tag:after {
   content: "";
-  width: 4px;
-  height: 4px;
-  background: #fff;
-  border-radius: 2px;
   position: absolute;
   top: 10px;
   left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background: #fff;
   box-shadow: -1px -1px 2px #004977;
 }
-
 .tag:hover {
-  color: #000;
   background: #e4e4e4;
+  color: black;
 }
-
 .tag:hover:before {
-  border-color: rgba(0, 0, 0, 0) #e4e4e4 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+  border-color: transparent #e4e4e4 transparent transparent;
 }
 
-.svg-japan-container .prefecture-map {
-  cursor: pointer;
-}
-
-.github-corner {
-  fill: #151513;
-  color: #fff;
-  z-index: 1021;
-  border: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-@-webkit-keyframes octocat-wave {
-  0%, 100% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-
-  20%, 60% {
-    -webkit-transform: rotate(-25deg);
-    transform: rotate(-25deg);
-  }
-
-  40%, 80% {
-    -webkit-transform: rotate(10deg);
-    transform: rotate(10deg);
-  }
-}
-
-@keyframes octocat-wave {
-  0%, 100% {
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-  }
-
-  20%, 60% {
-    -webkit-transform: rotate(-25deg);
-    transform: rotate(-25deg);
-  }
-
-  40%, 80% {
-    -webkit-transform: rotate(10deg);
-    transform: rotate(10deg);
-  }
-}
-
-@-webkit-keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
-
-.github-corner:hover {
-  color: #fff;
-}
-
-.github-corner:hover .octo-arm {
-  -webkit-animation: .56s ease-in-out octocat-wave;
-  animation: .56s ease-in-out octocat-wave;
-}
-
-.github-corner .octo-arm {
-  -webkit-transform-origin: 130px 106px;
-  transform-origin: 130px 106px;
-}
-
-@media (max-width: 662px) {
-  .github-corner {
-    -webkit-animation: 1.56s forwards fade-out;
-    animation: 1.56s forwards fade-out;
-  }
-
-  .github-corner .octo-arm {
-    -webkit-animation: .56s ease-in-out octocat-wave;
-    animation: .56s ease-in-out octocat-wave;
-  }
-
-  .github-corner:hover .octo-arm {
-    -webkit-animation: none;
-    animation: none;
-  }
-}
-
+/* src/components/Footer/index.css */
 .site-footer {
   font-size: 15px;
   line-height: 24px;
 }
-
 .site-footer h6 {
+  font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 16px;
 }
-
 .site-footer a:hover {
-  color: #36c;
+  color: #3366cc;
   text-decoration: none;
 }
-
 .footer-links {
   padding-left: 0;
   list-style: none;
 }
-
 .footer-links li {
   display: block;
 }
-
 .footer-links a {
   color: #737373;
 }
-
-.footer-links a:active, .footer-links a:focus, .footer-links a:hover {
-  color: #36c;
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #3366cc;
   text-decoration: none;
 }
-
 .footer-links.inline li {
   display: inline-block;
 }
-
 .copyright-text {
   margin: 0;
 }
-
 @media (max-width: 991px) {
-  .site-footer [class^="col-"] {
+  .site-footer [class^=col-] {
     margin-bottom: 30px;
   }
 }
-
 @media (max-width: 767px) {
   .site-footer {
     padding-bottom: 0;
   }
-
-  .site-footer .copyright-text, .site-footer .social-icons {
+  .site-footer .copyright-text,
+  .site-footer .social-icons {
     text-align: center;
   }
 }
 
+/* src/components/GithubCorner/index.css */
+.github-corner {
+  fill: #151513;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+  z-index: 1021;
+}
+@keyframes octocat-wave {
+  0%, 100% {
+    transform: rotate(0);
+  }
+  20%, 60% {
+    transform: rotate(-25deg);
+  }
+  40%, 80% {
+    transform: rotate(10deg);
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.github-corner:hover {
+  color: white;
+}
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+.github-corner .octo-arm {
+  transform-origin: 130px 106px;
+}
+@media (max-width: 662px) {
+  .github-corner {
+    animation: fade-out 1560ms;
+    animation-fill-mode: forwards;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+}
+
+/* src/components/JapanMap/index.css */
+.svg-japan-container .prefecture-map {
+  cursor: pointer;
+}
+
+/* src/themes/styles.css */
+
+/* src/themes/html5-reset.css */
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body {
+  line-height: 1;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+nav ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+input,
+select {
+  vertical-align: middle;
+}
 /*# sourceMappingURL=index.css.map */

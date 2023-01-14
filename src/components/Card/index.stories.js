@@ -45,3 +45,19 @@ LongTitle.args = {
   date: "2022-12-01",
   tags: ["JavaScript", "React.js", "Node.js"],
 };
+
+export const WithImage = Template.bind({});
+WithImage.args = {
+  title:
+    "Stronger Type Safety and Improved Collaboration with TypeScript in Financial Services",
+  description: "Description",
+  date: "2022-12-01",
+  tags: ["JavaScript", "Typescript"],
+  imageProps: {
+    image: "https://i.imgur.com/MBmjw2h.png",
+    sx: {
+      width: `100%`,
+      height: `300px`,
+    },
+  },
+};

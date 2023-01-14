@@ -1,12 +1,27 @@
-// src/themes/dark.theme.js
+// src/themes/light.theme.ts
 
 import { createTheme } from "@mui/material";
-import components from "./components";
+import typography from "./typography";
+declare module "@mui/material/styles" {
+  interface Palette {
+    blue: Palette["primary"];
+    navbar: Palette["primary"];
+  }
+
+  interface PaletteOptions {
+    blue: PaletteOptions["primary"];
+    navbar: PaletteOptions["primary"];
+  }
+}
 
 export const lightTheme = createTheme({
-  components,
+  typography,
   palette: {
     mode: "light",
+    navbar: {
+      main: "#f5f5f5",
+      // contrastText: '#999'
+    },
     blue: {
       light: "#337ab7",
       main: "#0056b3",
