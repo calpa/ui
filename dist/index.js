@@ -689,7 +689,6 @@ var useStyles3 = mui.makeStyles({
     top: "0",
     left: "0",
     width: "100%",
-    "min-width": "1024px",
     height: "640px",
     overflow: "hidden"
   },
