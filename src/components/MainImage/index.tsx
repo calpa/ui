@@ -3,10 +3,11 @@ import { useStyles } from "./makeStyles";
 
 type MainImageProps = {
   backgroundImage: string;
+  name: string;
 };
 
 function MainImage(props: MainImageProps) {
-  const { backgroundImage } = props;
+  const { backgroundImage, name } = props;
 
   const { classes, cx } = useStyles({
     backgroundImage,
@@ -20,7 +21,7 @@ function MainImage(props: MainImageProps) {
       </div>
       <div className={cx(classes.mainCopy)}>
         <Typography variant="h1" className={cx(classes.text)}>
-          秋葉原
+          {name}
         </Typography>
       </div>
     </div>
