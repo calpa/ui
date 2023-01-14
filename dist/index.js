@@ -720,13 +720,13 @@ var useStyles3 = mui.makeStyles({
   }
 }));
 function MainImage(props) {
-  const { backgroundImage } = props;
+  const { backgroundImage, name } = props;
   const { classes, cx } = useStyles3({
     backgroundImage
   });
   return /* @__PURE__ */ jsxRuntime.jsxs("div", { id: "mainImage", className: cx(classes.mainImage), children: [
     /* @__PURE__ */ jsxRuntime.jsx("div", { children: /* @__PURE__ */ jsxRuntime.jsx("figure", { children: /* @__PURE__ */ jsxRuntime.jsx("div", { className: cx(classes.image) }) }) }),
-    /* @__PURE__ */ jsxRuntime.jsx("div", { className: cx(classes.mainCopy), children: /* @__PURE__ */ jsxRuntime.jsx(material.Typography, { variant: "h1", className: cx(classes.text), children: "\u79CB\u8449\u539F" }) })
+    /* @__PURE__ */ jsxRuntime.jsx("div", { className: cx(classes.mainCopy), children: /* @__PURE__ */ jsxRuntime.jsx(material.Typography, { variant: "h1", className: cx(classes.text), children: name }) })
   ] });
 }
 var MainImage_default = MainImage;
