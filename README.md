@@ -27,7 +27,7 @@ You can view the components in this repository using Storybook. The Storybook fo
 
 To view the Storybook, go to the following link:
 
-https://639f7677727e8c57adae0d6d-dvrcubapjr.chromatic.com/
+https://ui.calpa.me/
 
 ## Contributing
 
