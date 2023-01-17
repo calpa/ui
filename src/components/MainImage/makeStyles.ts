@@ -8,7 +8,7 @@ export const useStyles = makeStyles<{ backgroundImage: string }>({
     top: "0",
     left: "0",
     width: "100%",
-    "min-width": "1024px",
+    // "min-width": "1024px",
     height: "640px",
     overflow: "hidden",
   },
