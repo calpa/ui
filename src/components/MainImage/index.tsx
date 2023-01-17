@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { useStyles } from "./makeStyles";
 
-type MainImageProps = {
+export type MainImageProps = {
   backgroundImage: string;
   name: string;
 };
