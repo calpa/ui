@@ -1,4 +1,5 @@
 import React$1, { FC, BaseSyntheticEvent, ReactElement, FormEvent } from 'react';
+import * as _mui_material from '@mui/material';
 
 type BlockquoteProps = {
     children: React$1.ReactNode;
@@ -87,6 +88,25 @@ type NavBarProps = {
   position?: "fixed" | "absolute" | "sticky" | "static" | "relative";
 };
 
+declare module "@mui/material/AppBar" {
+  interface AppBarPropsColorOverrides {
+    blue: true;
+    navbar: true;
+  }
+}
+
+declare module "@mui/material/styles" {
+  interface Palette {
+    blue: Palette["primary"];
+    navbar: Palette["primary"];
+  }
+
+  interface PaletteOptions {
+    blue: PaletteOptions["primary"];
+    navbar: PaletteOptions["primary"];
+  }
+}
+
 declare function noop(): void;
 declare function NavBar(props: NavBarProps): JSX.Element;
 declare namespace NavBar {
@@ -140,7 +160,7 @@ type svgJapanOptions = {
 };
 
 type JapanMapProps = svgJapanOptions & {
-    onClick: (event: Event) => void;
+  onClick: (event: Event) => void;
 };
 
 declare function JapanMap(props: JapanMapProps): JSX.Element;
@@ -161,4 +181,55 @@ declare const List: (props: ListProps) => JSX.Element;
 
 declare const ListItem: (props: ListItemProps) => JSX.Element;
 
-export { Blockquote, CustomButton as Button, CustomCard as Card, Date, Footer, GithubCorner, JapanMap, List, ListItem, NavBar, SignIn, Tag };
+type Article = {
+  url: string;
+  title: string;
+};
+
+type AttractionProps = {
+  description: string;
+  title: string;
+  location: string;
+  articles?: Article[];
+  Image: any;
+  Link?: React.ElementType;
+};
+
+declare function Attraction(props: AttractionProps): JSX.Element;
+declare namespace Attraction {
+    var defaultProps: {
+        articles: never[];
+    };
+}
+
+type MainImageProps = {
+    backgroundImage: string;
+    name: string;
+};
+declare function MainImage(props: MainImageProps): JSX.Element;
+
+declare module "@mui/material/styles" {
+    interface Palette {
+        blue: Palette["primary"];
+        navbar: Palette["primary"];
+    }
+    interface PaletteOptions {
+        blue: PaletteOptions["primary"];
+        navbar: PaletteOptions["primary"];
+    }
+}
+declare const darkTheme: _mui_material.Theme;
+
+declare module "@mui/material/styles" {
+    interface Palette {
+        blue: Palette["primary"];
+        navbar: Palette["primary"];
+    }
+    interface PaletteOptions {
+        blue: PaletteOptions["primary"];
+        navbar: PaletteOptions["primary"];
+    }
+}
+declare const lightTheme: _mui_material.Theme;
+
+export { Attraction, Blockquote, CustomButton as Button, CustomCard as Card, Date, Footer, GithubCorner, JapanMap, List, ListItem, MainImage, NavBar, SignIn, Tag, darkTheme, lightTheme };
