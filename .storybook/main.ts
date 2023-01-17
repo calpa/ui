@@ -1,4 +1,6 @@
-module.exports = {
+import type { StorybookConfig } from "@storybook/core-common";
+
+const config: StorybookConfig = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
@@ -18,8 +20,7 @@ module.exports = {
   features: {
     interactionsDebugger: true, // 👈 Enable playback controls
   },
-  docs: {
-    autodocs: true,
-  },
   staticDirs: ["../public"],
 };
+
+module.exports = config;
